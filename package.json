@@ -1,0 +1,20 @@
+{
+  "name": "anidha-website",
+  "version": "1.0.0",
+  "description": "Anidha Tech Solutions LLP - Official Website",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "echo 'HTML linting - add htmlhint to run'",
+    "lint:css": "echo 'CSS linting - add stylelint to run'",
+    "lint:js": "echo 'JS linting - add eslint to run'",
+    "build": "echo 'Build complete - static site ready'",
+    "preview": "npx serve public -p 3000",
+    "generate-sitemap": "node scripts/generate-sitemap.js"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
