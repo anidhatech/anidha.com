@@ -33,50 +33,9 @@
 </head>
 <body class="font-sans antialiased bg-white text-gray-900">
 
-    <!-- Navigation -->
+    <!-- Header Component -->
     <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="40" height="40">
-                        <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="rgba(15,108,189,0.18)" stroke="#0f6cbd" stroke-width="1.5"/>
-                        <line x1="50" y1="94" x2="50" y2="80" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <line x1="12" y1="50" x2="26" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <line x1="88" y1="50" x2="74" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <path d="M50 22 L30 72 L40 72 L50 48 L60 72 L70 72 Z" fill="#ffffff" opacity="0.95"/>
-                        <rect x="37" y="57" width="26" height="5" rx="2" fill="#0f6cbd"/>
-                        <circle cx="50" cy="22" r="3.5" fill="#0f6cbd"/>
-                        <circle cx="50" cy="80" r="3" fill="#0f6cbd"/>
-                        <circle cx="26" cy="50" r="3" fill="#0f6cbd"/>
-                        <circle cx="74" cy="50" r="3" fill="#0f6cbd"/>
-                    </svg>
-                    <div class="hidden sm:block">
-                        <span class="font-serif text-lg font-bold text-dark-900 tracking-widest">ANIDHA</span>
-                    </div>
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/services.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Services</a>
-                    <a href="/solutions.html" class="text-primary-600 font-semibold text-sm">Solutions</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Case Studies</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">About Us</a>
-                    <a href="/blog/" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Insights</a>
-                    <a href="/contact.html" class="bg-primary-600 text-white px-5 py-2 rounded-lg hover:bg-primary-700 text-sm font-semibold">Get Started</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/services.html" class="text-gray-600 hover:text-primary-600 py-2">Services</a>
-                    <a href="/solutions.html" class="text-primary-600 py-2">Solutions</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-primary-600 py-2">Case Studies</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-primary-600 py-2">About Us</a>
-                    <a href="/blog/" class="text-gray-600 hover:text-primary-600 py-2">Insights</a>
-                    <a href="/contact.html" class="bg-primary-600 text-white px-5 py-2 rounded-lg text-center">Get Started</a>
-                </div>
-            </div>
-        </nav>
+        <div id="header-container"></div>
     </header>
 
     <!-- Hero Section -->
@@ -84,7 +43,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl sm:text-5xl font-bold mb-6">Our Solutions</h1>
             <p class="text-lg text-gray-300 max-w-2xl">
-                Tailored solutions that address your specific business challenges. From enterprise automation to AI-driven decision making, we help you achieve your transformation goals.
+                Tailored solutions that address your specific business challenges.
             </p>
         </div>
     </section>
@@ -121,7 +80,7 @@
                     </div>
                     <a href="/contact.html" class="inline-flex items-center bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
                         Request Demo
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l4 4M4 12H3"/></svg>
                     </a>
                 </div>
                 <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 text-white">
@@ -153,238 +112,14 @@
         </div>
     </section>
 
-    <!-- AI-Driven Decision Making -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1 bg-gradient-to-br from-accent-indigo/10 to-accent-indigo/5 rounded-2xl p-8">
-                    <h3 class="font-semibold text-dark-900 mb-6">AI Decision Flow</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-16 h-16 bg-accent-indigo rounded-xl flex items-center justify-center text-white mr-4">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-dark-900">Data Collection</h4>
-                                <p class="text-sm text-gray-600">Aggregate metrics from all sources</p>
-                            </div>
-                        </div>
-                        <div class="flex justify-center"><svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
-                        <div class="flex items-center">
-                            <div class="w-16 h-16 bg-accent-indigo rounded-xl flex items-center justify-center text-white mr-4">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-dark-900">AI Analysis</h4>
-                                <p class="text-sm text-gray-600">ML models identify patterns & anomalies</p>
-                            </div>
-                        </div>
-                        <div class="flex justify-center"><svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg></div>
-                        <div class="flex items-center">
-                            <div class="w-16 h-16 bg-accent-indigo rounded-xl flex items-center justify-center text-white mr-4">
-                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-dark-900">Recommendation</h4>
-                                <p class="text-sm text-gray-600">Data-driven decisions with confidence scores</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <div class="inline-block px-3 py-1 bg-accent-indigo/10 text-accent-indigo rounded-full text-sm font-medium mb-4">AI-Driven Decision Making</div>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-dark-900 mb-6">Intelligence in Every Decision</h2>
-                    <p class="text-gray-600 mb-8">
-                        Bring the power of AI to your engineering workflows with intelligent insights and automated decision support systems. Our AI-driven platform processes vast amounts of data to deliver actionable recommendations in real-time.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 bg-accent-indigo/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5 text-accent-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark-900">Real-time Anomaly Detection</h4>
-                                <p class="text-sm text-gray-600">Identify issues before they impact your business with predictive alerts.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 bg-accent-indigo/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5 text-accent-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark-900">Capacity Forecasting</h4>
-                                <p class="text-sm text-gray-600">Predict resource needs and optimize spending with ML-based projections.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="w-10 h-10 bg-accent-indigo/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5 text-accent-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark-900">Automated Root Cause Analysis</h4>
-                                <p class="text-sm text-gray-600">Quickly identify the source of incidents with AI-powered analysis.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="/contact.html" class="inline-flex items-center bg-accent-indigo text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition-colors">
-                        Explore AI Solutions
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Data Pipeline Orchestration -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-block px-3 py-1 bg-accent-cyan/10 text-accent-cyan rounded-full text-sm font-medium mb-4">Data Pipeline Orchestration</div>
-                <h2 class="text-3xl sm:text-4xl font-bold text-dark-900 mb-6">Move Data at Scale, Reliably</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Build and manage scalable data pipelines that process, transform, and deliver data across your enterprise systems—from edge to cloud.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-accent-cyan hover:shadow-lg transition-all">
-                    <div class="w-14 h-14 bg-accent-cyan/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Stream Processing</h3>
-                    <p class="text-gray-600 mb-4">Process real-time data streams with sub-second latency. Perfect for IoT, telemetry, and event-driven applications.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Apache Kafka integration</li>
-                        <li>• Real-time analytics</li>
-                        <li>• Event sourcing</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-accent-cyan hover:shadow-lg transition-all">
-                    <div class="w-14 h-14 bg-accent-cyan/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Batch ETL Workflows</h3>
-                    <p class="text-gray-600 mb-4">Orchestrate complex ETL pipelines with data validation, transformation, and loading capabilities.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Apache Airflow</li>
-                        <li>• Data transformation</li>
-                        <li>• Quality checks</li>
-                    </ul>
-                </div>
-                <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:border-accent-cyan hover:shadow-lg transition-all">
-                    <div class="w-14 h-14 bg-accent-cyan/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-3">Data Quality Monitoring</h3>
-                    <p class="text-gray-600 mb-4">Ensure data integrity with automated quality checks, anomaly detection, and alerting.</p>
-                    <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• Data profiling</li>
-                        <li>• Anomaly detection</li>
-                        <li>• SLA monitoring</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Zero-Trust Security Platform -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-4">Zero-Trust Security</div>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-dark-900 mb-6">Security Without Compromise</h2>
-                    <p class="text-gray-600 mb-8">
-                        Implement comprehensive security across your infrastructure with automated compliance monitoring, continuous vulnerability scanning, and zero-trust architecture principles.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <div class="text-2xl font-bold text-primary-600 mb-1">SOC 2</div>
-                            <div class="text-sm text-gray-600">Compliance Ready</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <div class="text-2xl font-bold text-primary-600 mb-1">24/7</div>
-                            <div class="text-sm text-gray-600">Security Monitoring</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <div class="text-2xl font-bold text-primary-600 mb-1">< 5min</div>
-                            <div class="text-sm text-gray-600">Vulnerability Response</div>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-sm">
-                            <div class="text-2xl font-bold text-primary-600 mb-1">100%</div>
-                            <div class="text-sm text-gray-600">Visibility</div>
-                        </div>
-                    </div>
-                    <a href="/contact.html" class="inline-flex items-center bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                        Secure Your Infrastructure
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-                </div>
-                <div class="bg-gradient-to-br from-primary-900 to-primary-600 rounded-2xl p-8 text-white">
-                    <h3 class="font-semibold mb-6">Zero-Trust Principles</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Never Trust, Always Verify</h4>
-                                <p class="text-sm text-primary-200">Every access request is authenticated and authorized</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Least Privilege Access</h4>
-                                <p class="text-sm text-primary-200">Users and systems get only necessary permissions</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Assume Breach</h4>
-                                <p class="text-sm text-primary-200">Design for containment and rapid response</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Continuous Validation</h4>
-                                <p class="text-sm text-primary-200">Real-time monitoring and automated compliance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-dark-900 text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Find Your Solution</h2>
-            <p class="text-lg text-gray-300 mb-8">
-                Every organization has unique challenges. Let's discuss how our solutions can address yours specifically.
-            </p>
-            <a href="/contact.html" class="inline-flex items-center bg-accent-cyan text-white px-8 py-4 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
-                Schedule a Consultation
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-dark-900 text-white py-12 border-t border-white/10">
+    <footer class="bg-dark-900 text-white py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
             <p>© 2026 Anidha Tech Solutions LLP. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="/assets/js/main.js" defer></script>
+    <!-- Load header component and scripts -->
+    <script src="/assets/js/header-loader.js"></script>
 </body>
 </html>

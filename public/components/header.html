@@ -1,0 +1,122 @@
+<!-- Header Component - Use across all pages -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <!-- Top Bar: Social Icons (Left) and Contact Info (Right) -->
+    <div class="bg-dark-900 text-white text-xs py-2 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Social Media Icons - Left Aligned -->
+            <div class="flex items-center space-x-4">
+                <a href="https://www.linkedin.com/company/anidha-tech-solutions" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/anidha_tech/" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-pink-400 transition-colors" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61584986135273" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-blue-400 transition-colors" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://x.com/AnidhaTech" target="_blank" rel="noopener noreferrer"
+                    class="hover:text-gray-300 transition-colors" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+
+            <!-- Contact Info - Right Aligned -->
+            <div class="flex items-center space-x-6">
+                <a href="tel:9885543960" class="flex items-center hover:text-gray-300 transition-colors">
+                    <i class="fa-solid fa-phone mr-2"></i>
+                    <span>98855 43960</span>
+                </a>
+                <a href="mailto:contact@anidha.com" class="flex items-center hover:text-gray-300 transition-colors">
+                    <i class="fa-solid fa-envelope mr-2"></i>
+                    <span>contact@anidha.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+        <div class="flex justify-between items-center h-20">
+
+            <!-- Logo and Company Name - Horizontal Layout (Logo on LEFT of company name) -->
+            <a href="/" class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="50" height="50">
+                    <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="rgba(15,108,189,0.18)" stroke="#0f6cbd" stroke-width="1.5"/>
+                    <line x1="50" y1="94" x2="50" y2="80" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
+                    <line x1="12" y1="50" x2="26" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
+                    <line x1="88" y1="50" x2="74" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
+                    <path d="M50 22 L30 72 L40 72 L50 48 L60 72 L70 72 Z" fill="#ffffff" opacity="0.95"/>
+                    <rect x="37" y="57" width="26" height="5" rx="2" fill="#0f6cbd"/>
+                    <circle cx="50" cy="22" r="3.5" fill="#0f6cbd"/>
+                    <circle cx="50" cy="80" r="3" fill="#0f6cbd"/>
+                    <circle cx="26" cy="50" r="3" fill="#0f6cbd"/>
+                    <circle cx="74" cy="50" r="3" fill="#0f6cbd"/>
+                </svg>
+
+                <!-- Company Name Beside Logo (Horizontal) -->
+                <div class="flex flex-col items-start">
+                    <div class="flex items-baseline">
+                        <span class="font-serif text-2xl font-bold text-primary-900 tracking-widest">ANIDHA</span>
+                        <span class="text-sm font-medium text-primary-600 ml-2">Tech Solutions LLP</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation - Right Aligned -->
+            <div class="hidden md:flex items-center space-x-6 ml-auto">
+                <a href="/services.html" class="text-gray-600 hover:text-primary-600 text-base font-medium">Services</a>
+                <a href="/solutions.html" class="text-primary-600 font-semibold text-base">Solutions</a>
+                <a href="/industries.html" class="text-gray-600 hover:text-primary-600 text-base font-medium">Industries</a>
+                <a href="/about.html" class="text-gray-600 hover:text-primary-600 text-base font-medium">About Us</a>
+                <a href="/blog/" class="text-gray-600 hover:text-primary-600 text-base font-medium">Insights</a>
+                <a href="/contact.html" class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 text-base font-semibold">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 ml-auto" aria-label="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div class="flex flex-col space-y-3">
+                <a href="/services.html" class="text-gray-600 hover:text-primary-600 py-2 text-base">Services</a>
+                <a href="/solutions.html" class="text-primary-600 py-2 text-base">Solutions</a>
+                <a href="/industries.html" class="text-gray-600 hover:text-primary-600 py-2 text-base">Industries</a>
+                <a href="/about.html" class="text-gray-600 hover:text-primary-600 py-2 text-base">About Us</a>
+                <a href="/blog/" class="text-gray-600 hover:text-primary-600 py-2 text-base">Insights</a>
+
+                <!-- Mobile Social Links -->
+                <div class="flex space-x-4 pt-4 border-t border-gray-100">
+                    <a href="https://www.linkedin.com/company/anidha-tech-solutions" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-500 hover:text-blue-600" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/anidha_tech/" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-500 hover:text-pink-500" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61584986135273" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-500 hover:text-blue-700" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://x.com/AnidhaTech" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-500 hover:text-black" aria-label="X">
+                        <i class="fa-brands fa-x-twitter text-xl"></i>
+                    </a>
+                </div>
+
+                <a href="/contact.html" class="bg-primary-600 text-white px-6 py-3 rounded-lg text-center text-base font-semibold">Get Started</a>
+            </div>
+        </div>
+    </nav>
+</header>

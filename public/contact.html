@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Anidha Tech Solutions LLP - Schedule a free consultation and discuss how we can help your enterprise automate boldly and scale intelligently.">
     <meta name="keywords" content="Contact, Consultation, Get in Touch, Anidha Tech Solutions">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 600: '#0f6cbd', 900: '#05335e' },
+                        dark: { 900: '#0f172a', 800: '#1e293b' },
+                        accent: { cyan: '#06b6d4', indigo: '#6366f1', teal: '#14b8a6' }
+                    },
+                    fontFamily: { serif: ['Georgia', 'Times New Roman', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
     <meta name="author" content="Anidha Tech Solutions LLP">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Contact Us | Anidha Tech Solutions LLP">
@@ -33,50 +49,9 @@
 </head>
 <body class="font-sans antialiased bg-white text-gray-900">
 
-    <!-- Navigation -->
+    <!-- Header Component -->
     <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="40" height="40">
-                        <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="rgba(15,108,189,0.18)" stroke="#0f6cbd" stroke-width="1.5"/>
-                        <line x1="50" y1="94" x2="50" y2="80" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <line x1="12" y1="50" x2="26" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <line x1="88" y1="50" x2="74" y2="50" stroke="#0f6cbd" stroke-width="1.5" stroke-dasharray="3,2"/>
-                        <path d="M50 22 L30 72 L40 72 L50 48 L60 72 L70 72 Z" fill="#ffffff" opacity="0.95"/>
-                        <rect x="37" y="57" width="26" height="5" rx="2" fill="#0f6cbd"/>
-                        <circle cx="50" cy="22" r="3.5" fill="#0f6cbd"/>
-                        <circle cx="50" cy="80" r="3" fill="#0f6cbd"/>
-                        <circle cx="26" cy="50" r="3" fill="#0f6cbd"/>
-                        <circle cx="74" cy="50" r="3" fill="#0f6cbd"/>
-                    </svg>
-                    <div class="hidden sm:block">
-                        <span class="font-serif text-lg font-bold text-dark-900 tracking-widest">ANIDHA</span>
-                    </div>
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/services.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Services</a>
-                    <a href="/solutions.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Solutions</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Case Studies</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-primary-600 text-sm font-medium">About Us</a>
-                    <a href="/blog/" class="text-gray-600 hover:text-primary-600 text-sm font-medium">Insights</a>
-                    <a href="/contact.html" class="bg-primary-600 text-white px-5 py-2 rounded-lg hover:bg-primary-700 text-sm font-semibold">Contact</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Open menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-3">
-                    <a href="/services.html" class="text-gray-600 hover:text-primary-600 py-2">Services</a>
-                    <a href="/solutions.html" class="text-gray-600 hover:text-primary-600 py-2">Solutions</a>
-                    <a href="/case-studies.html" class="text-gray-600 hover:text-primary-600 py-2">Case Studies</a>
-                    <a href="/about.html" class="text-gray-600 hover:text-primary-600 py-2">About Us</a>
-                    <a href="/blog/" class="text-gray-600 hover:text-primary-600 py-2">Insights</a>
-                    <a href="/contact.html" class="bg-primary-600 text-white px-5 py-2 rounded-lg text-center">Contact</a>
-                </div>
-            </div>
-        </nav>
+        <div id="header-container"></div>
     </header>
 
     <!-- Hero Section -->
@@ -210,7 +185,7 @@
                             </div>
                             <div class="ml-4">
                                 <h3 class="font-semibold text-dark-900">Phone</h3>
-                                <a href="tel:+918012345678" class="text-primary-600 hover:underline">+91 77998 32255</a>
+                                <a href="tel:+98855 43960" class="text-primary-600 hover:underline">+91 77998 43960</a>
                             </div>
                         </div>
 
@@ -235,7 +210,7 @@
                             </div>
                             <div class="ml-4">
                                 <h3 class="font-semibold text-dark-900">Location</h3>
-                                <p class="text-gray-600">Hyderabad, India</p>
+                                <p class="text-gray-600">Bangalore, India</p>
                             </div>
                         </div>
                     </div>
@@ -266,5 +241,7 @@
     </footer>
 
     <script src="/assets/js/contact-form.js" defer></script>
+    <!-- Load header component and scripts -->
+    <script src="/assets/js/header-loader.js"></script>
 </body>
 </html>
