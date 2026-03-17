@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Resilient CI/CD Pipelines at Scale | Anidha Tech Solutions LLP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">Building Resilient CI/CD Pipelines at Scale</h1>
+        <div class="flex items-center gap-4 text-sm text-gray-600 mb-8 pb-6 border-b">
+            <span>February 28, 2026</span>
+            <span>•</span>
+            <span>6 min read</span>
+            <span>•</span>
+            <span class="bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">DevOps</span>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed mb-6">
+                Building CI/CD pipelines that handle thousands of deployments per day with zero downtime is challenging. Over the past few years, we've learned valuable lessons about what it takes to create truly resilient deployment infrastructure.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">The Foundation: Reliability Over Speed</h2>
+            <p class="mb-4">
+                Everyone wants fast deployments, but reliability must come first. A broken deployment—even if it's delivered quickly—causes more problems than a slightly slower but reliable one. Our most successful customers prioritize reliability as a non-negotiable requirement.
+            </p>
+            <p class="mb-4">
+                This means building comprehensive testing into your pipeline, implementing proper rollback mechanisms, and creating clear escalation paths for when things go wrong. Speed follows naturally from this foundation.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Key Architectural Patterns</h2>
+            <p class="mb-4">Several patterns have proven essential for resilient pipelines at scale:</p>
+
+            <ul class="space-y-3 mb-6">
+                <li><strong>Immutable infrastructure:</strong> Every deployment creates new resources rather than modifying existing ones. This eliminates configuration drift and makes rollbacks trivial.</li>
+                <li><strong>Canary and blue-green deployments:</strong> Release changes incrementally to small user segments before full rollout. This catches issues early with minimal impact.</li>
+                <li><strong>Feature flags:</strong> Decouple deployment from release. You can deploy code without exposing new functionality, enabling instant rollbacks without code changes.</li>
+                <li><strong>Automated rollback triggers:</strong> Define clear failure thresholds that automatically trigger rollbacks without human intervention.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Testing Strategies That Scale</h2>
+            <p class="mb-4">
+                Testing becomes exponentially harder at scale. Running full test suites for every commit works fine when you have ten deployments per day, but it becomes a bottleneck at thousands of deployments.
+            </p>
+            <p class="mb-4">
+                The solution is intelligent test selection and tiered testing. Fast unit tests run on every commit. Integration tests run on pull requests and main branch merges. End-to-end tests run on scheduled cadences or before production deployments.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Observability is Everything</h2>
+            <p class="mb-4">
+                You can't have resilient pipelines without deep observability. Every stage of your deployment process should emit structured, queryable logs. Every pipeline run should have a traceable lineage from the originating commit through all artifacts created.
+            </p>
+            <p class="mb-4">
+                This visibility enables rapid debugging when problems occur and provides the data needed for continuous improvement of your pipeline infrastructure itself.
+            </p>
+
+            <div class="bg-gray-50 p-6 rounded-xl mt-8 mb-6">
+                <h3 class="font-bold mb-3">Key Takeaways</h3>
+                <ul class="space-y-2">
+                    <li>• Prioritize reliability over speed—fast broken deployments are worse than slow reliable ones</li>
+                    <li>• Use immutable infrastructure, canary deployments, and feature flags</li>
+                    <li>• Implement tiered testing strategies with intelligent test selection</li>
+                    <li>• Build comprehensive observability into every pipeline stage</li>
+                </ul>
+            </div>
+
+            <div class="border-t pt-6 mt-8">
+                <p class="text-gray-600">
+                    <strong>Building resilient CI/CD infrastructure?</strong> Our team has deep experience creating pipelines that scale. Let's discuss how we can help you achieve deployment reliability at scale.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

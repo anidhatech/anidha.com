@@ -30,6 +30,91 @@
         }
     </script>
     <link rel="stylesheet" href="/assets/css/custom.css">
+    <style>
+        /* Modal Styles */
+        .article-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .article-modal.active {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #f3f4f6;
+            border: none;
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #374151;
+            transition: all 0.2s;
+        }
+
+        .close-modal:hover {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .article-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body class="font-sans antialiased bg-white text-gray-900">
 
@@ -43,7 +128,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl sm:text-5xl font-bold mb-6">Insights</h1>
             <p class="text-lg text-gray-300 max-w-2xl">
-                Thoughts, articles, and perspectives on intelligent automation, cloud transformation, and the future of enterprise technology.
+                Thoughts, articles, and perspectives on intelligent automation, cloud transformation, and future of enterprise technology.
             </p>
         </div>
     </section>
@@ -51,20 +136,20 @@
     <!-- Featured Article -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl overflow-hidden">
+            <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl overflow-hidden cursor-pointer article-card" onclick="openArticle('featured')">
                 <div class="grid md:grid-cols-2">
                     <div class="p-8 md:p-12 flex flex-col justify-center text-white">
                         <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4 w-fit">Featured</span>
                         <h2 class="text-2xl md:text-3xl font-bold mb-4">The Future of Intelligent Automation: What Every Enterprise Needs to Know</h2>
                         <p class="text-primary-100 mb-6">
-                            AI-driven automation is transforming how enterprises operate. Learn about the key trends, technologies, and strategies that will define the next decade of automation.
+                            AI-driven automation is transforming how enterprises operate. Learn about key trends, technologies, and strategies that will define the next decade of automation.
                         </p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-primary-200">March 7, 2026 • 8 min read</span>
-                            <a href="#" class="inline-flex items-center bg-white text-primary-600 px-5 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                                Read More
+                            <span class="inline-flex items-center text-white font-medium">
+                                Read Article
                                 <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </a>
+                            </span>
                         </div>
                     </div>
                     <div class="hidden md:block bg-primary-900/30 p-12 flex items-center justify-center">
@@ -83,107 +168,23 @@
             <div class="flex items-center justify-between mb-12">
                 <h2 class="text-2xl font-bold text-dark-900">Recent Articles</h2>
                 <div class="flex space-x-2">
-                    <button class="px-4 py-2 bg-white rounded-lg text-sm font-medium border border-gray-200 hover:border-primary-300">All</button>
-                    <button class="px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg">DevOps</button>
-                    <button class="px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg">Cloud</button>
-                    <button class="px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg">AI/ML</button>
+                    <button onclick="filterArticles('all')" class="filter-btn px-4 py-2 bg-white rounded-lg text-sm font-medium border border-gray-200 hover:border-primary-300 transition-colors active-filter">All</button>
+                    <button onclick="filterArticles('devops')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">DevOps</button>
+                    <button onclick="filterArticles('cloud')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">Cloud</button>
+                    <button onclick="filterArticles('ai')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">AI/ML</button>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-primary-100 to-primary-50 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-primary-100 text-primary-600 rounded text-xs font-medium mb-3">DevOps</span>
-                        <h3 class="font-bold text-dark-900 mb-2">Building Resilient CI/CD Pipelines at Scale</h3>
-                        <p class="text-gray-600 text-sm mb-4">Lessons learned from building pipelines that handle thousands of deployments per day with zero downtime.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Feb 28, 2026</span>
-                            <span>6 min read</span>
-                        </div>
-                    </div>
-                </article>
+            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Articles will be loaded dynamically here -->
+            </div>
 
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-accent-cyan/20 to-accent-cyan/5 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-accent-cyan/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-accent-cyan/10 text-accent-cyan rounded text-xs font-medium mb-3">Cloud</span>
-                        <h3 class="font-bold text-dark-900 mb-2">Multi-Cloud Strategy: When and How to Implement</h3>
-                        <p class="text-gray-600 text-sm mb-4">A practical guide to building and managing multi-cloud infrastructure without adding complexity.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Feb 21, 2026</span>
-                            <span>7 min read</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-accent-indigo/20 to-accent-indigo/5 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-accent-indigo/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-accent-indigo/10 text-accent-indigo rounded text-xs font-medium mb-3">AIOps</span>
-                        <h3 class="font-bold text-dark-900 mb-2">Getting Started with AIOps: A Practical Guide</h3>
-                        <p class="text-gray-600 text-sm mb-4">How to implement AI-powered operations in your organization, from strategy to execution.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Feb 14, 2026</span>
-                            <span>10 min read</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-accent-teal/20 to-accent-teal/5 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-accent-teal/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-accent-teal/10 text-accent-teal rounded text-xs font-medium mb-3">MLOps</span>
-                        <h3 class="font-bold text-dark-900 mb-2">MLOps in Production: Lessons from the Trenches</h3>
-                        <p class="text-gray-600 text-sm mb-4">Real-world insights on deploying and managing ML models in production environments.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Feb 7, 2026</span>
-                            <span>8 min read</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-purple-100 text-purple-600 rounded text-xs font-medium mb-3">IIoT</span>
-                        <h3 class="font-bold text-dark-900 mb-2">Industrial IoT: From Sensors to Insights</h3>
-                        <p class="text-gray-600 text-sm mb-4">Building end-to-end IIoT platforms that deliver real value from industrial data.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Jan 31, 2026</span>
-                            <span>9 min read</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                    </div>
-                    <div class="p-6">
-                        <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded text-xs font-medium mb-3">Database</span>
-                        <h3 class="font-bold text-dark-900 mb-2">Zero-Downtime Database Migrations: A Comprehensive Guide</h3>
-                        <p class="text-gray-600 text-sm mb-4">Strategies and tools for migrating databases without disrupting your users.</p>
-                        <div class="flex items-center justify-between text-sm text-gray-500">
-                            <span>Jan 24, 2026</span>
-                            <span>12 min read</span>
-                        </div>
-                    </div>
-                </article>
+            <div id="no-articles" class="hidden text-center py-12">
+                <p class="text-gray-600">No articles found for this category.</p>
             </div>
 
             <div class="text-center mt-12">
-                <button class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold border border-gray-200 hover:border-primary-300 transition-colors">
+                <button onclick="loadMoreArticles()" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold border border-gray-200 hover:border-primary-300 transition-colors">
                     Load More Articles
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
@@ -199,8 +200,8 @@
                 <p class="text-gray-600 mb-8">
                     Get our latest insights on intelligent automation, cloud transformation, and enterprise technology delivered to your inbox.
                 </p>
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
                     <button type="submit" class="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
                         Subscribe
                     </button>
@@ -217,7 +218,18 @@
         </div>
     </footer>
 
+    <!-- Article Modal -->
+    <div id="article-modal" class="article-modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeModal()" aria-label="Close">&times;</button>
+            <div id="modal-article-content">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Load header component and scripts -->
     <script src="/assets/js/header-loader.js"></script>
+    <script src="/assets/js/blog.js"></script>
 </body>
 </html>
