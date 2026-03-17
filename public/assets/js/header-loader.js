@@ -1,5 +1,5 @@
 // Header Component Loader
-// Loads the header component and initializes menu functionality
+// Loads header component and initializes menu functionality
 (function() {
     // Function to load header component
     function loadHeader() {
@@ -20,6 +20,9 @@
 
                     // Re-initialize menu functionality
                     initMenu();
+
+                    // Highlight active page in navigation
+                    highlightActivePage();
                 })
                 .catch(error => {
                     console.error('Failed to load header component:', error);
@@ -41,6 +44,68 @@
         }
     }
 
+    // Highlight the active page in navigation
+    function highlightActivePage() {
+        // Get current page path
+        const currentPath = window.location.pathname;
+
+        // Desktop navigation
+        const desktopNavLinks = document.querySelectorAll('nav .nav-link');
+        desktopNavLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+
+            // Check if this is the active link - match exact path
+            let isActive = false;
+            if (linkPath === '/') {
+                // Home page
+                isActive = currentPath === '/' || currentPath === '/index.html' || currentPath === '/index.html/';
+            } else {
+                // Other pages - check if current path ends with the link path
+                isActive = currentPath.endsWith(linkPath) || currentPath === linkPath || currentPath === linkPath + '/';
+            }
+
+            if (isActive) {
+                // Remove all active classes
+                desktopNavLinks.forEach(l => {
+                    l.classList.remove('text-primary-600', 'font-semibold');
+                    l.classList.add('text-gray-600');
+                });
+
+                // Add active classes to current link
+                link.classList.remove('text-gray-600');
+                link.classList.add('text-primary-600', 'font-semibold');
+            }
+        });
+
+        // Mobile navigation
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu .mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+
+            // Check if this is the active link - match exact path
+            let isActive = false;
+            if (linkPath === '/') {
+                // Home page
+                isActive = currentPath === '/' || currentPath === '/index.html' || currentPath === '/index.html/';
+            } else {
+                // Other pages - check if current path ends with the link path
+                isActive = currentPath.endsWith(linkPath) || currentPath === linkPath || currentPath === linkPath + '/';
+            }
+
+            if (isActive) {
+                // Remove all active classes from mobile nav
+                mobileNavLinks.forEach(l => {
+                    l.classList.remove('text-primary-600');
+                    l.classList.add('text-gray-600');
+                });
+
+                // Add active classes to current mobile link
+                link.classList.remove('text-gray-600');
+                link.classList.add('text-primary-600');
+            }
+        });
+    }
+
     // Load header when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadHeader);
@@ -50,4 +115,5 @@
 
     // Export function for external use if needed
     window.refreshHeader = loadHeader;
+    window.highlightActivePage = highlightActivePage;
 })();

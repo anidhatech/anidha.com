@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLOps in Production: Lessons from the Trenches | Anidha Tech Solutions LLP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">MLOps in Production: Lessons from the Trenches</h1>
+        <div class="flex items-center gap-4 text-sm text-gray-600 mb-8 pb-6 border-b">
+            <span>February 7, 2026</span>
+            <span>•</span>
+            <span>8 min read</span>
+            <span>•</span>
+            <span class="bg-accent-teal/10 text-accent-teal px-3 py-1 rounded-full text-xs font-medium">MLOps</span>
+        </div>
+
+        <div class="prose prose-lg max-w-none">
+            <p class="text-lg leading-relaxed mb-6">
+                Moving machine learning models from notebook to production is where most ML projects fail. The gap between research and operations is substantial, and bridging it requires systematic approaches to deployment, monitoring, and lifecycle management. Here are hard-won lessons from production ML deployments.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Model Deployment is Just the Beginning</h2>
+            <p class="mb-4">
+                Getting a model running in production is step one, but it's far from the complete picture. Production environments introduce challenges that don't exist in development: data drift, performance degradation, changing user behavior, and infrastructure constraints.
+            </p>
+            <p class="mb-4">
+                Successful MLOps requires planning for the entire model lifecycle, not just deployment. This means investing in monitoring, retraining pipelines, rollback mechanisms, and clear processes for model retirement.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Monitoring ML Models Differently from Software</h2>
+            <p class="mb-4">
+                Traditional software monitoring focuses on availability, latency, and error rates. ML models need all of that plus model-specific metrics:
+            </p>
+
+            <ul class="space-y-3 mb-6">
+                <li><strong>Prediction drift:</strong> Are predictions changing over time for similar inputs?</li>
+                <li><strong>Feature drift:</strong> Are the distributions of input features changing?</li>
+                <li><strong>Accuracy in production:</strong> How often are predictions correct, and is this stable?</li>
+                <li><strong>Bias monitoring:</strong> Are predictions fair across different user segments?</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Automated Retraining is Harder Than It Looks</h2>
+            <p class="mb-4">
+                Automated retraining pipelines sound appealing, but they introduce significant complexity. When should models retrain? What data should they train on? How do you ensure new models are better than old ones? How do you coordinate model updates across all serving endpoints?
+            </p>
+            <p class="mb-4">
+                Our most successful customers start with manual or semi-automated retraining processes. They establish clear triggers for retraining, defined evaluation criteria, and thorough testing processes. Only when these are mature and reliable do they consider full automation.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Feature Stores and Data Versioning are Critical</h2>
+            <p class="mb-4">
+                Reproducing training environments is fundamental for reliable ML operations. If you can't recreate exactly how a model was trained, you can't reliably retrain or debug it. This requires systematic versioning of:
+            </p>
+
+            <ul class="space-y-3 mb-6">
+                <li><strong>Training data:</strong> Snapshots of exact datasets used for training</li>
+                <li><strong>Features:</strong> Code that transforms raw data into model inputs</li>
+                <li><strong>Model artifacts:</strong> Trained model files and configuration</li>
+                <li><strong>Dependencies:</strong> Exact versions of libraries and frameworks used</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Design for Rollback from Day One</h2>
+            <p class="mb-4">
+                New models will sometimes perform worse than old ones. Whether it's data drift, overfitting, or subtle bugs, you need ability to quickly revert to a previous version. This isn't just a safety mechanism—it's how you learn. Rapid rollbacks enable faster iteration because they reduce the cost of mistakes.
+            </p>
+            <p class="mb-4">
+                Implement model versioning at serving endpoints, maintain multiple model versions simultaneously, and have automated rollback triggers based on performance metrics.
+            </p>
+
+            <div class="bg-gray-50 p-6 rounded-xl mt-8 mb-6">
+                <h3 class="font-bold mb-3">Key Takeaways</h3>
+                <ul class="space-y-2">
+                    <li>• Model deployment is step one, not the complete journey</li>
+                    <li>• Monitor ML models with model-specific metrics: drift, accuracy, bias</li>
+                    <li>• Start with manual retraining processes before full automation</li>
+                    <li>• Implement systematic versioning for data, features, and models</li>
+                    <li>• Design for fast rollback to enable confident iteration</li>
+                </ul>
+            </div>
+
+            <div class="border-t pt-6 mt-8">
+                <p class="text-gray-600">
+                    <strong>Building production ML infrastructure?</strong> Our team has experience implementing MLOps platforms that scale. Let's discuss how we can help you deploy and maintain ML models reliably.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
