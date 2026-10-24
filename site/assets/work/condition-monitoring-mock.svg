@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" font-family="Instrument Sans, Arial, sans-serif">
+<rect width="640" height="440" fill="#f6f8fb"/>
+<rect width="640" height="40" fill="#05335e"/><text x="16" y="25" fill="#fff" font-size="13" font-weight="600">Shop floor: Plant 1, Area A</text><text x="624" y="25" fill="#c4d3e4" font-size="11" text-anchor="end">Sample data</text>
+<rect x="16" y="56" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="16" y="56" width="4" height="112" rx="2" fill="#2e9d6a"/>
+<text x="30" y="76" font-size="12" font-weight="600" fill="#05335e">Pump A</text>
+<text x="140" y="76" font-size="10" fill="#4a5a70" text-anchor="end">Zone A</text>
+<text x="30" y="102" font-size="10" fill="#4a5a70">H</text>
+<rect x="44" y="94" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="94" width="21" height="9" rx="2" fill="#2e9d6a"/>
+<text x="30" y="124" font-size="10" fill="#4a5a70">V</text>
+<rect x="44" y="116" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="116" width="15" height="9" rx="2" fill="#2e9d6a"/>
+<text x="30" y="146" font-size="10" fill="#4a5a70">A</text>
+<rect x="44" y="138" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="138" width="33" height="9" rx="2" fill="#2e9d6a"/>
+<rect x="164" y="56" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="164" y="56" width="4" height="112" rx="2" fill="#7fb34a"/>
+<text x="178" y="76" font-size="12" font-weight="600" fill="#05335e">Pump B</text>
+<text x="288" y="76" font-size="10" fill="#4a5a70" text-anchor="end">Zone B</text>
+<text x="178" y="102" font-size="10" fill="#4a5a70">H</text>
+<rect x="192" y="94" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="94" width="12" height="9" rx="2" fill="#7fb34a"/>
+<text x="178" y="124" font-size="10" fill="#4a5a70">V</text>
+<rect x="192" y="116" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="116" width="29" height="9" rx="2" fill="#7fb34a"/>
+<text x="178" y="146" font-size="10" fill="#4a5a70">A</text>
+<rect x="192" y="138" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="138" width="23" height="9" rx="2" fill="#7fb34a"/>
+<rect x="16" y="180" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="16" y="180" width="4" height="112" rx="2" fill="#2e9d6a"/>
+<text x="30" y="200" font-size="12" font-weight="600" fill="#05335e">Fan C</text>
+<text x="140" y="200" font-size="10" fill="#4a5a70" text-anchor="end">Zone A</text>
+<text x="30" y="226" font-size="10" fill="#4a5a70">H</text>
+<rect x="44" y="218" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="218" width="11" height="9" rx="2" fill="#2e9d6a"/>
+<text x="30" y="248" font-size="10" fill="#4a5a70">V</text>
+<rect x="44" y="240" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="240" width="28" height="9" rx="2" fill="#2e9d6a"/>
+<text x="30" y="270" font-size="10" fill="#4a5a70">A</text>
+<rect x="44" y="262" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="262" width="11" height="9" rx="2" fill="#2e9d6a"/>
+<rect x="164" y="180" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="164" y="180" width="4" height="112" rx="2" fill="#e0a020"/>
+<text x="178" y="200" font-size="12" font-weight="600" fill="#05335e">Motor D</text>
+<text x="288" y="200" font-size="10" fill="#4a5a70" text-anchor="end">Zone C</text>
+<text x="178" y="226" font-size="10" fill="#4a5a70">H</text>
+<rect x="192" y="218" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="218" width="51" height="9" rx="2" fill="#e0a020"/>
+<text x="178" y="248" font-size="10" fill="#4a5a70">V</text>
+<rect x="192" y="240" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="240" width="27" height="9" rx="2" fill="#e0a020"/>
+<text x="178" y="270" font-size="10" fill="#4a5a70">A</text>
+<rect x="192" y="262" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="262" width="29" height="9" rx="2" fill="#e0a020"/>
+<rect x="16" y="304" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="16" y="304" width="4" height="112" rx="2" fill="#7fb34a"/>
+<text x="30" y="324" font-size="12" font-weight="600" fill="#05335e">Gearbox E</text>
+<text x="140" y="324" font-size="10" fill="#4a5a70" text-anchor="end">Zone B</text>
+<text x="30" y="350" font-size="10" fill="#4a5a70">H</text>
+<rect x="44" y="342" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="342" width="25" height="9" rx="2" fill="#7fb34a"/>
+<text x="30" y="372" font-size="10" fill="#4a5a70">V</text>
+<rect x="44" y="364" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="364" width="40" height="9" rx="2" fill="#7fb34a"/>
+<text x="30" y="394" font-size="10" fill="#4a5a70">A</text>
+<rect x="44" y="386" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="44" y="386" width="14" height="9" rx="2" fill="#7fb34a"/>
+<rect x="164" y="304" width="136" height="112" rx="6" fill="#fff" stroke="#d5dde8"/>
+<rect x="164" y="304" width="4" height="112" rx="2" fill="#d0463a"/>
+<text x="178" y="324" font-size="12" font-weight="600" fill="#05335e">Blower F</text>
+<text x="288" y="324" font-size="10" fill="#4a5a70" text-anchor="end">Zone D</text>
+<text x="178" y="350" font-size="10" fill="#4a5a70">H</text>
+<rect x="192" y="342" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="342" width="37" height="9" rx="2" fill="#d0463a"/>
+<text x="178" y="372" font-size="10" fill="#4a5a70">V</text>
+<rect x="192" y="364" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="364" width="63" height="9" rx="2" fill="#d0463a"/>
+<text x="178" y="394" font-size="10" fill="#4a5a70">A</text>
+<rect x="192" y="386" width="92" height="9" rx="2" fill="#e8eef5"/>
+<rect x="192" y="386" width="84" height="9" rx="2" fill="#d0463a"/>
+<rect x="324" y="56" width="300" height="368" rx="6" fill="#fff" stroke="#d5dde8"/>
+<text x="338" y="78" font-size="12" font-weight="600" fill="#05335e">FFT spectrum: Gearbox E</text>
+<text x="338" y="94" font-size="10" fill="#4a5a70">Velocity, mm/s RMS, 0 to 1,000 Hz</text>
+<line x1="354" y1="306" x2="608" y2="306" stroke="#a9b7c9"/><line x1="354" y1="116" x2="354" y2="306" stroke="#a9b7c9"/>
+<line x1="354" y1="164" x2="608" y2="164" stroke="#eef2f7"/>
+<line x1="354" y1="211" x2="608" y2="211" stroke="#eef2f7"/>
+<line x1="354" y1="258" x2="608" y2="258" stroke="#eef2f7"/>
+<polyline points="354.0,295.1 355.4,296.1 356.8,292.8 358.2,298.1 359.6,293.5 361.1,296.7 362.5,297.6 363.9,297.7 365.3,296.6 366.7,293.7 368.1,297.4 369.5,294.7 370.9,288.3 372.3,255.7 373.8,198.5 375.2,210.2 376.6,267.7 378.0,293.2 379.4,294.3 380.8,296.0 382.2,296.6 383.6,295.1 385.0,295.8 386.5,296.7 387.9,293.9 389.3,294.3 390.7,293.3 392.1,261.3 393.5,176.8 394.9,135.0 396.3,213.6 397.7,281.1 399.2,291.7 400.6,297.7 402.0,296.0 403.4,294.1 404.8,297.5 406.2,295.6 407.6,298.2 409.0,294.6 410.4,293.6 411.9,288.7 413.3,260.2 414.7,231.4 416.1,245.6 417.5,281.1 418.9,293.6 420.3,295.7 421.7,293.6 423.1,293.0 424.6,295.7 426.0,294.6 427.4,298.1 428.8,294.4 430.2,294.7 431.6,292.7 433.0,293.7 434.4,296.8 435.8,296.2 437.3,294.6 438.7,298.3 440.1,295.8 441.5,297.4 442.9,297.7 444.3,298.1 445.7,294.0 447.1,297.7 448.5,297.0 450.0,296.2 451.4,293.4 452.8,297.9 454.2,295.8 455.6,295.3 457.0,293.4 458.4,293.7 459.8,293.5 461.2,296.8 462.7,296.0 464.1,296.4 465.5,293.4 466.9,292.9 468.3,297.3 469.7,292.9 471.1,262.8 472.5,198.0 473.9,186.6 475.4,249.3 476.8,289.6 478.2,297.9 479.6,296.0 481.0,296.3 482.4,295.2 483.8,293.0 485.2,294.5 486.6,295.5 488.1,294.9 489.5,294.5 490.9,298.1 492.3,293.3 493.7,294.0 495.1,293.4 496.5,293.9 497.9,296.2 499.3,296.1 500.8,297.8 502.2,294.8 503.6,298.0 505.0,298.0 506.4,297.2 507.8,297.5 509.2,296.5 510.6,298.1 512.0,298.4 513.5,297.5 514.9,297.8 516.3,296.3 517.7,298.3 519.1,293.4 520.5,294.9 521.9,297.6 523.3,297.0 524.7,296.4 526.2,296.3 527.6,297.7 529.0,293.5 530.4,291.5 531.8,284.6 533.2,256.6 534.6,245.7 536.0,271.3 537.4,291.3 538.9,296.5 540.3,293.7 541.7,297.5 543.1,298.3 544.5,293.0 545.9,295.4 547.3,297.6 548.7,295.3 550.1,298.2 551.6,295.4 553.0,292.8 554.4,293.5 555.8,294.4 557.2,296.9 558.6,296.3 560.0,297.4 561.4,294.0 562.8,295.4 564.3,294.0 565.7,296.5 567.1,297.1 568.5,293.8 569.9,292.8 571.3,293.5 572.7,293.8 574.1,293.7 575.5,294.2 577.0,297.1 578.4,295.4 579.8,296.4 581.2,298.2 582.6,298.2 584.0,296.8 585.4,296.9 586.8,294.5 588.2,292.9 589.7,295.9 591.1,293.1 592.5,292.8 593.9,293.0 595.3,296.3 596.7,297.1 598.1,297.1 599.5,297.3 600.9,297.2 602.4,294.8 603.8,293.3 605.2,293.6 606.6,295.7 608.0,294.7" fill="none" stroke="#0f6cbd" stroke-width="1.5"/>
+<text x="374" y="194" font-size="10" font-weight="600" fill="#05335e" text-anchor="middle">1×</text>
+<text x="395" y="136" font-size="10" font-weight="600" fill="#05335e" text-anchor="middle">2×</text>
+<text x="473" y="180" font-size="10" font-weight="600" fill="#05335e" text-anchor="middle">GMF</text>
+<text x="338" y="336" font-size="11" font-weight="600" fill="#05335e">Peaks</text>
+<line x1="338" y1="342" x2="610" y2="342" stroke="#eef2f7"/>
+<text x="338" y="356" font-size="10.5" fill="#0f172a">1× running speed</text><text x="514" y="356" font-size="10.5" fill="#4a5a70">24.8 Hz</text><text x="610" y="356" font-size="10.5" fill="#0f172a" text-anchor="end">2.1</text>
+<line x1="338" y1="362" x2="610" y2="362" stroke="#eef2f7"/>
+<text x="338" y="376" font-size="10.5" fill="#0f172a">2× running speed</text><text x="514" y="376" font-size="10.5" fill="#4a5a70">49.6 Hz</text><text x="610" y="376" font-size="10.5" fill="#0f172a" text-anchor="end">3.4</text>
+<line x1="338" y1="382" x2="610" y2="382" stroke="#eef2f7"/>
+<text x="338" y="396" font-size="10.5" fill="#0f172a">Gear mesh</text><text x="514" y="396" font-size="10.5" fill="#4a5a70">465 Hz</text><text x="610" y="396" font-size="10.5" fill="#0f172a" text-anchor="end">2.5</text>
+</svg>
