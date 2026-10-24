@@ -1,0 +1,62 @@
+<!--{
+ "title": "Building resilient CI/CD pipelines at scale",
+ "description": "What changes when a delivery pipeline has to carry many teams and many deployments a day, and how to keep it safe.",
+ "path": "/blog/articles/building-resilient-cicd.html",
+ "layout": "article",
+ "og": "article-building-resilient-cicd",
+ "section": "blog",
+ "date": "2026-02-28",
+ "minutes": "6",
+ "category": "DevOps",
+ "breadcrumb": [
+  [
+   "Insights",
+   "/blog/"
+  ],
+  [
+   "Building resilient CI/CD pipelines at scale",
+   null
+  ]
+ ]
+}-->
+<p>
+Building CI/CD pipelines that carry many teams and many deployments a day, without downtime, is hard. These are the practices that make the biggest difference to how resilient a delivery pipeline is.
+</p>
+<h2>The foundation: reliability over speed</h2>
+<p>
+Everyone wants fast deployments, but reliability must come first. A broken deployment—even if it's delivered quickly—causes more problems than a slightly slower but reliable one. Our most successful customers prioritise reliability as a non-negotiable requirement.
+</p>
+<p>
+This means building comprehensive testing into your pipeline, implementing proper rollback mechanisms, and creating clear escalation paths for when things go wrong. Speed follows naturally from this foundation.
+</p>
+<h2>Key architectural patterns</h2>
+<p>Several patterns have proven essential for resilient pipelines at scale:</p>
+<ul>
+<li><strong>Immutable infrastructure:</strong> Every deployment creates new resources rather than modifying existing ones. This eliminates configuration drift and makes rollbacks trivial.</li>
+<li><strong>Canary and blue-green deployments:</strong> Release changes incrementally to small user segments before full rollout. This catches issues early with minimal impact.</li>
+<li><strong>Feature flags:</strong> Decouple deployment from release. You can deploy code without exposing new functionality, enabling instant rollbacks without code changes.</li>
+<li><strong>Automated rollback triggers:</strong> Define clear failure thresholds that automatically trigger rollbacks without human intervention.</li>
+</ul>
+<h2>Testing strategies that scale</h2>
+<p>
+Testing becomes exponentially harder at scale. Running full test suites for every commit works fine when you have ten deployments per day, but it becomes a bottleneck at hundreds.
+</p>
+<p>
+The solution is intelligent test selection and tiered testing. Fast unit tests run on every commit. Integration tests run on pull requests and main branch merges. End-to-end tests run on scheduled cadences or before production deployments.
+</p>
+<h2>Observability is everything</h2>
+<p>
+You can't have resilient pipelines without deep observability. Every stage of your deployment process should emit structured, queryable logs. Every pipeline run should have a traceable lineage from the originating commit through all artifacts created.
+</p>
+<p>
+This visibility enables rapid debugging when problems occur and provides the data needed for continuous improvement of your pipeline infrastructure itself.
+</p>
+<div class="takeaways">
+<h2>Key takeaways</h2>
+<ul>
+<li>Prioritise reliability over speed—fast broken deployments are worse than slow reliable ones</li>
+<li>Use immutable infrastructure, canary deployments, and feature flags</li>
+<li>Implement tiered testing strategies with intelligent test selection</li>
+<li>Build comprehensive observability into every pipeline stage</li>
+</ul>
+</div>

@@ -1,0 +1,75 @@
+<!--{
+ "title": "MLOps in production: practical lessons",
+ "description": "What it takes to deploy, monitor and retrain machine-learning models reliably in production.",
+ "path": "/blog/articles/mlops-production-lessons.html",
+ "layout": "article",
+ "og": "article-mlops-production-lessons",
+ "section": "blog",
+ "date": "2026-02-07",
+ "minutes": "8",
+ "category": "AI and automation",
+ "breadcrumb": [
+  [
+   "Insights",
+   "/blog/"
+  ],
+  [
+   "MLOps in production: practical lessons",
+   null
+  ]
+ ]
+}-->
+<p>
+Moving machine learning models from notebook to production is where most ML projects fail. The gap between research and operations is substantial, and bridging it requires systematic approaches to deployment, monitoring, and lifecycle management. Here are hard-won lessons from production ML deployments.
+</p>
+<h2>Model deployment is just the beginning</h2>
+<p>
+Getting a model running in production is step one, but it's far from the complete picture. Production environments introduce challenges that don't exist in development: data drift, performance degradation, changing user behaviour, and infrastructure constraints.
+</p>
+<p>
+Successful MLOps requires planning for the entire model lifecycle, not just deployment. This means investing in monitoring, retraining pipelines, rollback mechanisms, and clear processes for model retirement.
+</p>
+<h2>Monitoring ML models differently from software</h2>
+<p>
+Traditional software monitoring focuses on availability, latency, and error rates. ML models need all of that plus model-specific metrics:
+</p>
+<ul>
+<li><strong>Prediction drift:</strong> Are predictions changing over time for similar inputs?</li>
+<li><strong>Feature drift:</strong> Are the distributions of input features changing?</li>
+<li><strong>Accuracy in production:</strong> How often are predictions correct, and is this stable?</li>
+<li><strong>Bias monitoring:</strong> Are predictions fair across different user segments?</li>
+</ul>
+<h2>Automated retraining is harder than it looks</h2>
+<p>
+Automated retraining pipelines sound appealing, but they introduce significant complexity. When should models retrain? What data should they train on? How do you ensure new models are better than old ones? How do you coordinate model updates across all serving endpoints?
+</p>
+<p>
+Our most successful customers start with manual or semi-automated retraining processes. They establish clear triggers for retraining, defined evaluation criteria, and thorough testing processes. Only when these are mature and reliable do they consider full automation.
+</p>
+<h2>Feature stores and data versioning are critical</h2>
+<p>
+Reproducing training environments is fundamental for reliable ML operations. If you can't recreate exactly how a model was trained, you can't reliably retrain or debug it. This requires systematic versioning of:
+</p>
+<ul>
+<li><strong>Training data:</strong> Snapshots of exact datasets used for training</li>
+<li><strong>Features:</strong> Code that transforms raw data into model inputs</li>
+<li><strong>Model artifacts:</strong> Trained model files and configuration</li>
+<li><strong>Dependencies:</strong> Exact versions of libraries and frameworks used</li>
+</ul>
+<h2>Design for rollback from day one</h2>
+<p>
+New models will sometimes perform worse than old ones. Whether it's data drift, overfitting, or subtle bugs, you need ability to quickly revert to a previous version. This isn't just a safety mechanism—it's how you learn. Rapid rollbacks enable faster iteration because they reduce the cost of mistakes.
+</p>
+<p>
+Implement model versioning at serving endpoints, maintain multiple model versions simultaneously, and have automated rollback triggers based on performance metrics.
+</p>
+<div class="takeaways">
+<h2>Key takeaways</h2>
+<ul>
+<li>Model deployment is step one, not the complete journey</li>
+<li>Monitor ML models with model-specific metrics: drift, accuracy, bias</li>
+<li>Start with manual retraining processes before full automation</li>
+<li>Implement systematic versioning for data, features, and models</li>
+<li>Design for fast rollback to enable confident iteration</li>
+</ul>
+</div>
