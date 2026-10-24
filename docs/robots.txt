@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /*.json$
-Disallow: /*?*
-Disallow: /.git/
 
-Sitemap: https://anidha.com/sitemap.xml
-
-Crawl-delay: 1
+Sitemap: https://www.anidha.com/sitemap.xml
