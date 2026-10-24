@@ -1,123 +1,69 @@
-# Anidha Tech Solutions LLP Website
+# anidha.com
 
-Official website for Anidha Tech Solutions LLP - helping modern enterprises automate boldly and scale intelligently.
+Source for [www.anidha.com](https://www.anidha.com), the website of Anidha Tech Solutions LLP.
 
-## Overview
+GitHub Pages serves the `docs/` folder of the `main` branch. There is no server: every page is a
+static file. `docs/` is **generated**, so edit the sources in `site/` and rebuild. Do not edit `docs/` by hand,
+except `docs/CNAME`, which the build never touches.
 
-This is a static website built with HTML and Tailwind CSS, designed to be:
-- **Professional**: Modern consulting firm design
-- **Lightweight**: Fast loading with minimal dependencies
-- **Secure**: HTTPS enabled with security best practices
-- **Low Cost**: AWS-hosted with minimal monthly expenses
-- **SEO Optimized**: Proper meta tags, structured data, and sitemaps
-- **Easy to Maintain**: Simple static site structure
+## Layout
 
-## Pages
+```
+site/
+  pages/           one HTML file per page; JSON front matter at the top sets title, URL, breadcrumb, etc.
+  partials/        head, header, footer and the contact band shared by every page
+  styles/site.css  design tokens and all styles (no framework)
+  scripts/site.js  small progressive-enhancement script (menu, copy buttons, certificate viewer)
+  assets/          fonts, logo, images, share images (copied to docs/assets/)
+  static/          files kept at legacy public URLs (e.g. /images/anidha.png)
+build/
+  build.mjs        site/ → docs/  (Node built-ins only)
+  content.mjs      shared content: the services list, icons, systems map, phase tracker, recognition strip
+  assets.mjs       raster work: favicons, share images, screenshots, certificate (needs dev dependencies)
+  check.mjs        checks the built site: links, alt text, metadata, banned claims, legacy URLs
+docs/              built output, served by GitHub Pages
+```
 
-- **Home** (`/`) - Main landing page with services overview
-- **Services** (`/services.html`) - Detailed service offerings
-- **Solutions** (`/solutions.html`) - Enterprise solutions
-- **Case Studies** (`/case-studies.html`) - Success stories
-- **About Us** (`/about.html`) - Company information
-- **Insights** (`/blog/`) - Blog and articles
-- **Contact** (`/contact.html`) - Contact form
+## Rebuild
 
-## Quick Start
-
-### Local Preview
+Requires Node 20 or later.
 
 ```bash
-# Install dependencies
-npm install
-
-# Preview the site
-npm run preview
+npm install            # dev dependencies (sharp, playwright, axe-core) — only needed for assets
+npm run build          # regenerate docs/ from site/
+npm run check          # verify the result
+npm run preview        # or: python3 -m http.server 4321 --directory docs
 ```
 
-Visit http://localhost:3000 to view the website.
+`npm run build` uses only Node built-ins, so it also runs in CI. It also copies `docs/` to `public/` (git-ignored) because the legacy workflow uploads that folder.
 
-### Project Structure
+### When you change…
 
-```
-anidha.com/
-├── public/                 # Static files
-│   ├── index.html          # Homepage
-│   ├── services.html       # Services page
-│   ├── solutions.html      # Solutions page
-│   ├── case-studies.html   # Case studies
-│   ├── about.html         # About us
-│   ├── contact.html        # Contact form
-│   ├── blog/              # Blog section
-│   │   └── index.html
-│   └── assets/            # CSS, JS, images
-│       ├── css/
-│       ├── js/
-│       └── images/
-├── infra/                 # AWS infrastructure
-│   ├── terraform/         # IaC configurations
-│   └── aws-cli/          # Deployment scripts
-├── scripts/               # Utility scripts
-├── .github/               # GitHub workflows
-│   └── workflows/
-├── package.json
-└── README.md
-```
+| Change | Do |
+|---|---|
+| Page copy | Edit `site/pages/…`, then `npm run build` |
+| A new page | Add a file under `site/pages/` with front matter (copy an existing page), then build. It joins the sitemap automatically. |
+| Services list, product rows, phase status | `build/content.mjs` (and the matching page), then build |
+| Page titles (share images) | `npm run og` (needs Chromium: `npx playwright install chromium`), then build |
+| TechElevate screenshot | `node build/assets.mjs --techelevate`, then build |
+| Certificate | `node build/assets.mjs --cert <masked.pdf>`. Produces a raster-only image and PDF with no text layer, so nothing hidden under a mask can be copied out. |
+| Logo or favicon | Replace `site/assets/brand/anidha-mark.svg`, run `npm run assets`, then build |
 
-## Deployment
+### Front matter keys
 
-### Manual Deployment to AWS
+`title`, `description` (unique per page), `path` (public URL), `section` (highlights the nav item),
+`breadcrumb`, `og` (share image name), `service` (adds Service JSON-LD), `caseStudy`, `layout`
+(`article` or `redirect` with `to`), `cta: false` (hides the contact band), `noindex`.
 
-```bash
-# Sync to S3
-aws s3 sync public/ s3://anidha-website --delete
+## Content rules
 
-# Invalidate CloudFront cache
-aws cloudfront create-invalidation \
-  --distribution-id <DISTRIBUTION_ID> \
-  --paths "/*"
-```
+- Publish only claims we can substantiate. No unsourced metrics, logos, testimonials or client counts.
+- Client names, logos and outcome figures need the client's written approval. The case study is
+  anonymised until then. `npm run check` also fails if any term listed in `docs-internal/banned-terms.txt` (git-ignored, kept locally because this repo is public) appears on the site.
+- Practices we have not yet delivered as Anidha are labelled "Capability".
+- Contact details: contact@anidha.com, +91 77998 32255 (`tel:+917799832255`), Hyderabad. Email
+  links are wrapped in `<!--email_off-->` so Cloudflare does not rewrite them.
+- British/Indian-English spelling; sentence-case headings; every button is a verb phrase.
 
-### Automated Deployment via GitHub Actions
-
-Push to the `main` branch to trigger automatic deployment to AWS.
-
-## Technology Stack
-
-| Component | Technology |
-|-----------|------------|
-| Frontend | HTML + Tailwind CSS |
-| JavaScript | Vanilla JS |
-| Hosting | AWS S3 (Static) |
-| CDN | AWS CloudFront |
-| DNS | AWS Route 53 |
-| SSL | AWS Certificate Manager |
-| Security | AWS WAF |
-| CI/CD | GitHub Actions |
-| Contact Form | Lambda + API Gateway + DynamoDB + SES |
-
-## Cost Estimate
-
-| Period | Monthly Cost |
-|--------|--------------|
-| First 12 months (Free Tier) | ~$0.50 |
-| After Free Tier | ~$7.50 |
-
-## Services Offered
-
-- DevOps Automation
-- Cloud Infrastructure
-- AIOps
-- MLOps
-- Industrial IoT
-- Database Migration Orchestration
-
-## Contact
-
-- **Email**: contact@anidha.com
-- **Phone**: +91 77998 32255
-- **Location**: Hyderabad, India
-- **LinkedIn**: https://linkedin.com/company/anidha-tech-solutions
-
-## License
-
-Copyright © 2026 Anidha Tech Solutions LLP. All rights reserved.
+The `.github/workflows/ci-cd.yml` workflow predates this site and deploys to S3. It is not used by
+GitHub Pages.
