@@ -138,7 +138,7 @@ export const recognition = () => `<section class="recognition" aria-labelledby="
     <h2 id="recognition-title" class="visually-hidden">Recognition and registrations</h2>
     <ul class="recognition-list">
       <li><img class="rec-logo" src="/assets/recognition/startup-india.png" width="292" height="64" alt="Startup India"><div><b>DPIIT-recognised startup</b><span>Startup India, Government of India. <a class="link-button" href="/assets/recognition/dpiit-certificate-masked.pdf" data-dialog="cert-dialog">View certificate (masked)</a></span></div></li>
-      <li>${COLOR_ICONS.msme}<div><b>MSME registered</b><span>Udyam registration, Ministry of MSME</span></div></li>
+      <li>${COLOR_ICONS.msme}<div><b>MSME registered</b><span>Udyam registration, Ministry of MSME, since 26 March 2026</span></div></li>
       <li>${COLOR_ICONS.partner}<div><b>AWS Partner Network member</b><span>Registered partner and AWS Marketplace seller</span></div></li>
     </ul>
   </div>
