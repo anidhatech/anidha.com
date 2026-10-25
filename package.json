@@ -1,20 +1,23 @@
 {
   "name": "anidha-website",
-  "version": "1.0.0",
-  "description": "Anidha Tech Solutions LLP - Official Website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Anidha Tech Solutions LLP - official website (static, served by GitHub Pages from docs/)",
+  "type": "module",
   "scripts": {
-    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
-    "lint:html": "echo 'HTML linting - add htmlhint to run'",
-    "lint:css": "echo 'CSS linting - add stylelint to run'",
-    "lint:js": "echo 'JS linting - add eslint to run'",
-    "build": "rm -rf public && cp -r docs public",
-    "preview": "npx serve public -p 3000",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "build": "node build/build.mjs && rm -rf public && cp -r docs public",
+    "assets": "node build/assets.mjs",
+    "og": "node build/assets.mjs --og",
+    "preview": "npx serve docs -p 3000",
+    "check": "node build/check.mjs"
   },
   "devDependencies": {
-    "serve": "^14.2.1"
+    "axe-core": "^4.10.3",
+    "playwright": "1.63.0",
+    "serve": "^14.2.1",
+    "sharp": "^0.35.5"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }

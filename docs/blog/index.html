@@ -1,239 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <meta name="description" content="Insights and articles from Anidha Tech Solutions LLP - Latest thoughts on DevOps, Cloud Infrastructure, AIOps, MLOps, Industrial IoT, and more.">
-    <meta name="keywords" content="Blog, Insights, Articles, DevOps, Cloud, AIOps, MLOps, IIoT">
-    <meta name="author" content="Anidha Tech Solutions LLP">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Insights | Anidha Tech Solutions LLP">
-    <meta property="og:description" content="Latest thoughts and articles on intelligent automation and cloud transformation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://anidha.com/blog/">
-    <link rel="canonical" href="https://anidha.com/blog/">
-    <title>Insights | Anidha Tech Solutions LLP</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights | Anidha Tech Solutions</title>
+<meta name="description" content="Practical articles from Anidha's engineers on DevOps, cloud, AI and automation, industrial IoT and data.">
+<link rel="canonical" href="https://www.anidha.com/blog/">
+<script>document.documentElement.className='js'</script>
+<link rel="preload" href="/assets/fonts/instrument-sans-latin-wdth-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=0e5059a235">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/anidha-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<meta name="theme-color" content="#05335e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anidha Tech Solutions">
+<meta property="og:title" content="Insights">
+<meta property="og:description" content="Practical articles from Anidha's engineers on DevOps, cloud, AI and automation, industrial IoT and data.">
+<meta property="og:url" content="https://www.anidha.com/blog/">
+<meta property="og:image" content="https://www.anidha.com/assets/og/insights.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Insights">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AnidhaTech">
+<meta name="twitter:title" content="Insights">
+<meta name="twitter:description" content="Practical articles from Anidha's engineers on DevOps, cloud, AI and automation, industrial IoT and data.">
+<meta name="twitter:image" content="https://www.anidha.com/assets/og/insights.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: { 600: '#0f6cbd', 900: '#05335e' },
-                        dark: { 900: '#0f172a', 800: '#1e293b' },
-                        accent: { cyan: '#06b6d4', indigo: '#6366f1', teal: '#14b8a6' }
-                    },
-                    fontFamily: { serif: ['Georgia', 'Times New Roman', 'serif'] }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="/assets/css/custom.css">
-    <style>
-        /* Modal Styles */
-        .article-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .article-modal.active {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 16px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalSlideIn 0.3s ease-out;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            background: #f3f4f6;
-            border: none;
-            border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: #374151;
-            transition: all 0.2s;
-        }
-
-        .close-modal:hover {
-            background: #e5e7eb;
-            color: #111827;
-        }
-
-        .article-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        .animate-spin {
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.anidha.com/#organization","name":"Anidha Tech Solutions LLP","alternateName":"Anidha Tech Solutions","url":"https://www.anidha.com/","logo":"https://www.anidha.com/assets/brand/anidha-logo-512.png","email":"contact@anidha.com","telephone":"+91-77998-32255","foundingDate":"2026-02-19","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},"contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"contact@anidha.com","telephone":"+91-77998-32255","areaServed":["IN","AE","SA","US"],"availableLanguage":["en"]}],"sameAs":["https://www.linkedin.com/company/anidha-tech-solutions","https://x.com/AnidhaTech","https://www.instagram.com/anidha_tech/","https://www.facebook.com/profile.php?id=61584986135273","https://github.com/anidhatech"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.anidha.com/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://www.anidha.com/blog/"}]}]}</script>
+<script src="/assets/site.js?v=66cf387385" defer></script>
 </head>
-<body class="font-sans antialiased bg-white text-gray-900">
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="brand" href="/" aria-label="Anidha Tech Solutions, home">
+      <img src="/assets/brand/anidha-mark.svg" alt="" width="40" height="46">
+      <span class="brand-name" aria-hidden="true"><b>ANIDHA</b><span>Tech Solutions LLP</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main">
+      <ul>
+        <li class="has-menu">
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="services-menu" >Services
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+          <div class="mega" id="services-menu">
+            <ul>
+              <li><a href="/services/software-engineering.html"><b>Software engineering</b><span>Web, mobile, APIs and microservices</span></a></li>
+              <li><a href="/services/enterprise-platforms.html"><b>Enterprise platforms</b><span>SAP and Salesforce implementation and integration</span></a></li>
+              <li><a href="/services/product-design.html"><b>UI/UX and product design</b><span>Research, design systems and prototypes</span></a></li>
+              <li><a href="/services/cloud-devops.html"><b>Cloud, DevOps and platform engineering</b><span>AWS, Azure, GCP, Kubernetes, CI/CD, FinOps</span></a></li>
+              <li><a href="/services/data-ai.html"><b>Data, AI and automation</b><span>GenAI, MLOps, AIOps, pipelines, migration</span></a></li>
+              <li><a href="/services/industrial-iot.html"><b>Industrial IoT</b><span>Sensor-to-dashboard systems and condition monitoring</span></a></li>
+              <li><a href="/services/quality-managed-services.html"><b>Quality engineering and managed services</b><span>Test automation, SRE, run and support</span></a></li>
+              <li class="mega-all"><a href="/services.html"><b>All services</b><span>How the seven practices fit together</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="/industries.html">Industries</a></li>
+        <li><a href="/products.html">Products</a></li>
+        <li><a href="/work/">Work</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog/" aria-current="page">Insights</a></li>
+        <li><a href="/careers.html">Careers</a></li>
+        <li class="nav-cta"><a href="/contact.html">Talk to us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Insights</span></li></ol></nav>
+    <h1>Insights</h1>
+    <p class="lead">Practical notes on building and running software, cloud platforms, AI and industrial systems.</p>
+  </div>
+</header>
 
-    <!-- Header Component -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div id="header-container"></div>
-    </header>
+<section class="section">
+  <div class="wrap">
+    <ul class="article-list">
+  <li><a href="/blog/articles/future-intelligent-automation.html"><div><time datetime="2026-03-07">7 March 2026</time><br><span class="cat">AI and automation · 8 min read</span></div><div><h2>The future of intelligent automation: what enterprises need to know</h2><p>The trends, technologies and operating choices that will shape enterprise automation over the next few years.</p></div></a></li>
+  <li><a href="/blog/articles/building-resilient-cicd.html"><div><time datetime="2026-02-28">28 February 2026</time><br><span class="cat">DevOps · 6 min read</span></div><div><h2>Building resilient CI/CD pipelines at scale</h2><p>What changes when a delivery pipeline has to carry many teams and many deployments a day, and how to keep it safe.</p></div></a></li>
+  <li><a href="/blog/articles/multi-cloud-strategy.html"><div><time datetime="2026-02-21">21 February 2026</time><br><span class="cat">Cloud · 7 min read</span></div><div><h2>Multi-cloud strategy: when and how to implement it</h2><p>A practical guide to running across more than one cloud without adding needless complexity.</p></div></a></li>
+  <li><a href="/blog/articles/getting-started-aiops.html"><div><time datetime="2026-02-14">14 February 2026</time><br><span class="cat">AI and automation · 10 min read</span></div><div><h2>Getting started with AIOps: a practical guide</h2><p>How to introduce AI-assisted operations, from first objectives and data quality to human-reviewed automation.</p></div></a></li>
+  <li><a href="/blog/articles/mlops-production-lessons.html"><div><time datetime="2026-02-07">7 February 2026</time><br><span class="cat">AI and automation · 8 min read</span></div><div><h2>MLOps in production: practical lessons</h2><p>What it takes to deploy, monitor and retrain machine-learning models reliably in production.</p></div></a></li>
+  <li><a href="/blog/articles/industrial-iot-sensors-insights.html"><div><time datetime="2026-01-31">31 January 2026</time><br><span class="cat">Industrial IoT · 9 min read</span></div><div><h2>Industrial IoT: from sensors to insights</h2><p>How an end-to-end industrial IoT platform turns raw sensor signals into decisions on the shop floor.</p></div></a></li>
+  <li><a href="/blog/articles/zero-database-migrations.html"><div><time datetime="2026-01-24">24 January 2026</time><br><span class="cat">Data · 12 min read</span></div><div><h2>Zero-downtime database migrations: a practical guide</h2><p>Strategies for migrating databases without disrupting the people and systems that depend on them.</p></div></a></li>
+</ul>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-dark-900 via-dark-800 to-primary-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-6">Insights</h1>
-            <p class="text-lg text-gray-300 max-w-2xl">
-                Thoughts, articles, and perspectives on intelligent automation, cloud transformation, and future of enterprise technology.
-            </p>
-        </div>
-    </section>
-
-    <!-- Featured Article -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl overflow-hidden cursor-pointer article-card" onclick="openArticle('featured')">
-                <div class="grid md:grid-cols-2">
-                    <div class="p-8 md:p-12 flex flex-col justify-center text-white">
-                        <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4 w-fit">Featured</span>
-                        <h2 class="text-2xl md:text-3xl font-bold mb-4">The Future of Intelligent Automation: What Every Enterprise Needs to Know</h2>
-                        <p class="text-primary-100 mb-6">
-                            AI-driven automation is transforming how enterprises operate. Learn about key trends, technologies, and strategies that will define the next decade of automation.
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-primary-200">March 7, 2026 • 8 min read</span>
-                            <span class="inline-flex items-center text-white font-medium">
-                                Read Article
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="hidden md:block bg-primary-900/30 p-12 flex items-center justify-center">
-                        <div class="w-full h-64 bg-primary-700/50 rounded-xl flex items-center justify-center">
-                            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles Grid -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between mb-12">
-                <h2 class="text-2xl font-bold text-dark-900">Recent Articles</h2>
-                <div class="flex space-x-2">
-                    <button onclick="filterArticles('all')" class="filter-btn px-4 py-2 bg-white rounded-lg text-sm font-medium border border-gray-200 hover:border-primary-300 transition-colors active-filter">All</button>
-                    <button onclick="filterArticles('devops')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">DevOps</button>
-                    <button onclick="filterArticles('cloud')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">Cloud</button>
-                    <button onclick="filterArticles('ai')" class="filter-btn px-4 py-2 text-gray-600 text-sm font-medium hover:bg-white hover:border-gray-200 rounded-lg transition-colors">AI/ML</button>
-                </div>
-            </div>
-
-            <div id="articles-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Articles will be loaded dynamically here -->
-            </div>
-
-            <div id="no-articles" class="hidden text-center py-12">
-                <p class="text-gray-600">No articles found for this category.</p>
-            </div>
-
-            <div class="text-center mt-12">
-                <button onclick="loadMoreArticles()" class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold border border-gray-200 hover:border-primary-300 transition-colors">
-                    Load More Articles
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-primary-50 to-accent-cyan/10 rounded-2xl p-8 md:p-12 text-center">
-                <h2 class="text-2xl md:text-3xl font-bold text-dark-900 mb-4">Stay Updated</h2>
-                <p class="text-gray-600 mb-8">
-                    Get our latest insights on intelligent automation, cloud transformation, and enterprise technology delivered to your inbox.
-                </p>
-                <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-                    <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-transparent" required>
-                    <button type="submit" class="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                        Subscribe
-                    </button>
-                </form>
-                <p class="text-sm text-gray-500 mt-4">No spam, unsubscribe anytime.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark-900 text-white py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-            <p>© 2026 Anidha Tech Solutions LLP. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Article Modal -->
-    <div id="article-modal" class="article-modal" onclick="closeModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="close-modal" onclick="closeModal()" aria-label="Close">&times;</button>
-            <div id="modal-article-content">
-                <!-- Article content will be loaded here -->
-            </div>
-        </div>
+</main>
+<section class="band-navy on-navy cta-band" aria-labelledby="cta-title">
+  <div class="wrap">
+    <h2 id="cta-title">Tell us what you are building</h2>
+    <p class="lead">Email or call us with a short description of the problem. A senior engineer aims to reply within one working day with questions or a suggested next step.</p>
+    <div class="contact-block">
+      <div class="contact-item">
+        <span class="label">Email</span>
+        <span class="value"><!--email_off--><a href="mailto:contact@anidha.com">contact@anidha.com</a><!--/email_off--><button class="copy-btn" type="button" data-copy="contact@anidha.com" aria-label="Copy email address">Copy</button></span>
+      </div>
+      <div class="contact-item">
+        <span class="label">Phone, Monday to Friday, 9:00 to 18:00 IST</span>
+        <span class="value"><a href="tel:+917799832255">+91 77998 32255</a><button class="copy-btn" type="button" data-copy="+91 77998 32255" aria-label="Copy phone number">Copy</button></span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Load header component and scripts -->
-    <script src="/assets/js/header-loader.js"></script>
-    <script src="/assets/js/blog.js"></script>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Anidha Tech Solutions, home">
+          <img src="/assets/brand/anidha-mark.svg" alt="" width="40" height="46" loading="lazy">
+          <span class="brand-name" aria-hidden="true"><b>ANIDHA</b><span>Tech Solutions LLP</span></span>
+        </a>
+        <p>Software, platform, cloud and AI engineering, delivered by senior teams.</p>
+        <p>Anidha Tech Solutions LLP<br>Hyderabad, Telangana, India</p>
+        <div class="social">
+          <a href="https://www.linkedin.com/company/anidha-tech-solutions" rel="noopener" aria-label="Anidha on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://x.com/AnidhaTech" rel="noopener" aria-label="Anidha on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg></a>
+          <a href="https://www.instagram.com/anidha_tech/" rel="noopener" aria-label="Anidha on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61584986135273" rel="noopener" aria-label="Anidha on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/services/software-engineering.html">Software engineering</a></li>
+          <li><a href="/services/enterprise-platforms.html">Enterprise platforms</a></li>
+          <li><a href="/services/product-design.html">UI/UX and product design</a></li>
+          <li><a href="/services/cloud-devops.html">Cloud, DevOps and platform engineering</a></li>
+          <li><a href="/services/data-ai.html">Data, AI and automation</a></li>
+          <li><a href="/services/industrial-iot.html">Industrial IoT</a></li>
+          <li><a href="/services/quality-managed-services.html">Quality engineering and managed services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/work/">Work</a></li>
+          <li><a href="/products.html">Products</a></li>
+          <li><a href="/industries.html">Industries</a></li>
+          <li><a href="/blog/">Insights</a></li>
+          <li><a href="/careers.html">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><!--email_off--><a href="mailto:contact@anidha.com">contact@anidha.com</a><!--/email_off--></li>
+          <li><a href="tel:+917799832255">+91 77998 32255</a></li>
+          <li>Hyderabad, India</li>
+          <li><a href="/contact.html">All contact details</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>© 2026 Anidha Tech Solutions LLP. DPIIT-recognised startup.</p>
+      <p><a href="/privacy.html">Privacy notice</a></p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

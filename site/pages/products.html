@@ -1,0 +1,65 @@
+<!--{
+ "title": "Products",
+ "description": "Products built by Anidha Tech Solutions: TechElevate, a free hands-on DevOps, cloud and AI learning platform, and products in development for Kubernetes, healthcare and cloud cost.",
+ "path": "/products.html",
+ "section": "products",
+ "og": "products",
+ "breadcrumb": [["Products", null]],
+ "updated": "2026-10-24"
+}-->
+<header class="page-hero">
+  <div class="wrap">
+    {{{breadcrumbHtml}}}
+    <h1>Products we build and run ourselves</h1>
+    <p class="lead">Our own products are where we try new ideas and hold ourselves to the standards we promise clients. One is live; the rest are in development and will appear here as they launch.</p>
+  </div>
+</header>
+
+<section class="section" aria-labelledby="te-title">
+  <div class="wrap">
+    <div class="product-feature">
+      <div>
+        <p class="live-badge">Live</p>
+        <h2 id="te-title" style="font-size:var(--t-2xl)">TechElevate</h2>
+        <p>A free, hands-on learning platform for DevOps, cloud and AI. Guided skill tracks run from Linux, shell scripting and Git through Docker, Kubernetes, Terraform, AWS, Azure and Claude. Learners practise against a deterministic simulated Kubernetes cluster in the browser, clearly labelled Simulation Mode.</p>
+        <ul class="fact-row">
+          <li><b>14</b><span>skill tracks</span></li>
+          <li><b>354</b><span>hands-on topics</span></li>
+          <li><b>60+</b><span>simulator labs</span></li>
+          <li><b>54</b><span>incidents to fix</span></li>
+          <li><b>~269 h</b><span>of guided practice</span></li>
+        </ul>
+        <div class="btn-row"><a class="btn btn-primary" href="https://techelevate.anidha.com/">Start free on TechElevate</a></div>
+      </div>
+      <div class="shot">
+        <picture>
+          <source srcset="/assets/products/techelevate-960.avif 960w, /assets/products/techelevate-1440.avif 1440w" type="image/avif" sizes="(min-width: 60rem) 38rem, 100vw">
+          <img src="/assets/products/techelevate-960.webp" srcset="/assets/products/techelevate-960.webp 960w, /assets/products/techelevate-1440.webp 1440w" sizes="(min-width: 60rem) 38rem, 100vw" width="1440" height="900" alt="TechElevate home page: the headline 'Elevate your skills by actually practicing them' above the list of skill tracks, from Linux to Claude certifications." loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:var(--s6)">
+      <div><h3>Learn by doing</h3><p class="muted">Lessons, scenario quizzes and hands-on work. Grading checks the state you produced, not the command you typed.</p></div>
+      <div><h3>Fix real failure modes</h3><p class="muted">An Incident Center with crash loops, empty endpoints, stuck volumes, failed pipelines and locked Terraform state to investigate.</p></div>
+      <div><h3>Prepare for certification</h3><p class="muted">Readiness scores and mock exams mapped to the CKA, Terraform Associate, AWS, Azure, Claude and GitHub certifications.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:var(--s4)">TechElevate is an independent learning resource. It is not affiliated with or endorsed by the Cloud Native Computing Foundation, the Linux Foundation, HashiCorp, Amazon Web Services, Microsoft, Anthropic or GitHub.</p>
+  </div>
+</section>
+
+<section class="section band-white" aria-labelledby="dev-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="dev-title">In development</h2>
+      <p>Early-stage products. We share the idea here; details and availability will follow at launch.</p>
+    </div>
+    <ul class="dev-list">
+      <li><b>KubeLens AI</b><p>An AI copilot for Kubernetes troubleshooting, with remediation plans that a person approves before anything changes.</p><span class="dev-state">In development</span></li>
+      <li><b>Anidha Vaak</b><p>An on-premises clinical scribe for Indian outpatient consultations, built for ABDM, so patient audio stays inside the hospital.</p><span class="dev-state">In development</span></li>
+      <li><b>CostLens for AI</b><p>Spend visibility and budget caps for teams using LLM and generative-AI services.</p><span class="dev-state">In development</span></li>
+      <li><b>CostLens for Azure</b><p>Cost checks for Azure infrastructure-as-code, before changes are deployed.</p><span class="dev-state">In development</span></li>
+    </ul>
+    <p style="margin-top:var(--s4)">Interested in early access or a pilot? <a href="/contact.html">Tell us about your use case</a>.</p>
+  </div>
+</section>

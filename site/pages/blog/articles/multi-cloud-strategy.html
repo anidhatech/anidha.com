@@ -1,0 +1,66 @@
+<!--{
+ "title": "Multi-cloud strategy: when and how to implement it",
+ "description": "A practical guide to running across more than one cloud without adding needless complexity.",
+ "path": "/blog/articles/multi-cloud-strategy.html",
+ "layout": "article",
+ "og": "article-multi-cloud-strategy",
+ "section": "blog",
+ "date": "2026-02-21",
+ "minutes": "7",
+ "category": "Cloud",
+ "breadcrumb": [
+  [
+   "Insights",
+   "/blog/"
+  ],
+  [
+   "Multi-cloud strategy: when and how to implement it",
+   null
+  ]
+ ]
+}-->
+<p>
+Multi-cloud strategies have evolved from buzzword to necessity for many enterprises. But implementing them effectively requires careful planning and clear objectives. Not every organisation needs multi-cloud, and those that do must choose their approach carefully.
+</p>
+<h2>When multi-cloud makes sense</h2>
+<p>
+Multi-cloud isn't about using every cloud provider equally. It's about strategic distribution of workloads based on business needs. Clear indicators that multi-cloud might be right for you include:
+</p>
+<ul>
+<li><strong>Regulatory requirements:</strong> Different jurisdictions may require data residency in specific cloud regions or providers.</li>
+<li><strong>Vendor risk mitigation:</strong> Significant dependence on a single provider represents unacceptable business risk.</li>
+<li><strong>Best-of-breed services:</strong> Different providers excel at different services—AI, data analytics, or specific infrastructure needs.</li>
+<li><strong>Cost optimisation:</strong> Certain workloads are significantly cheaper on one provider versus another.</li>
+</ul>
+<h2>Multi-cloud approaches</h2>
+<p>
+There are fundamentally different ways to implement multi-cloud, each with different trade-offs:
+</p>
+<h3>Multi-cloud via abstraction layer</h3>
+<p>
+Implement a common abstraction layer that hides provider differences. Tools like Kubernetes and Terraform work across providers, allowing you to write infrastructure-as-code once and deploy anywhere. This approach maximises portability but can limit your ability to use provider-specific features.
+</p>
+<h3>Multi-cloud via service distribution</h3>
+<p>
+Run different services on different providers based on their strengths. Your data platform might run on Google Cloud while your application servers run on AWS. This approach optimises for capability but increases operational complexity.
+</p>
+<h3>Multi-cloud via geographic distribution</h3>
+<p>
+Run the same application on different providers in different regions to optimise latency or meet regulatory requirements. This approach creates resilience but doubles or triples operational overhead.
+</p>
+<h2>Managing complexity</h2>
+<p>
+The biggest challenge with multi-cloud is managing complexity. Each provider has different APIs, conventions, and best practices. Without careful governance, your team ends up maintaining parallel infrastructure stacks with duplicated effort.
+</p>
+<p>
+Success requires establishing common standards and automation that works across providers. This includes standardised monitoring, security controls, deployment processes, and operational procedures. The goal is to make provider differences invisible to your development teams where possible.
+</p>
+<div class="takeaways">
+<h2>Key takeaways</h2>
+<ul>
+<li>Multi-cloud isn't right for everyone—assess your specific needs first</li>
+<li>Common triggers: regulatory requirements, risk mitigation, best-of-breed services, cost optimisation</li>
+<li>Choose your approach: abstraction layer, service distribution, or geographic distribution</li>
+<li>Invest in common standards and automation to manage complexity</li>
+</ul>
+</div>

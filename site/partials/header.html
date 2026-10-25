@@ -1,0 +1,34 @@
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="brand" href="/" aria-label="Anidha Tech Solutions, home">
+      <img src="/assets/brand/anidha-mark.svg" alt="" width="40" height="46">
+      <span class="brand-name" aria-hidden="true"><b>ANIDHA</b><span>Tech Solutions LLP</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main">
+      <ul>
+        <li class="has-menu">
+          <button class="menu-button" type="button" aria-expanded="false" aria-controls="services-menu" {{{currentServices}}}>Services
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+          <div class="mega" id="services-menu">
+            <ul>
+{{{servicesMenu}}}
+              <li class="mega-all"><a href="/services.html"><b>All services</b><span>How the seven practices fit together</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="/industries.html"{{{cur_industries}}}>Industries</a></li>
+        <li><a href="/products.html"{{{cur_products}}}>Products</a></li>
+        <li><a href="/work/"{{{cur_work}}}>Work</a></li>
+        <li><a href="/about.html"{{{cur_about}}}>About</a></li>
+        <li><a href="/blog/"{{{cur_blog}}}>Insights</a></li>
+        <li><a href="/careers.html"{{{cur_careers}}}>Careers</a></li>
+        <li class="nav-cta"><a href="/contact.html"{{{cur_contact}}}>Talk to us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

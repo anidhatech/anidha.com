@@ -1,0 +1,80 @@
+<!--{
+ "title": "Industrial IoT: from sensors to insights",
+ "description": "How an end-to-end industrial IoT platform turns raw sensor signals into decisions on the shop floor.",
+ "path": "/blog/articles/industrial-iot-sensors-insights.html",
+ "layout": "article",
+ "og": "article-industrial-iot-sensors-insights",
+ "section": "blog",
+ "date": "2026-01-31",
+ "minutes": "9",
+ "category": "Industrial IoT",
+ "breadcrumb": [
+  [
+   "Insights",
+   "/blog/"
+  ],
+  [
+   "Industrial IoT: from sensors to insights",
+   null
+  ]
+ ]
+}-->
+<p>
+Industrial IoT platforms that deliver real value require more than just sensors and connectivity. They need end-to-end architectures that transform raw sensor data into actionable insights. Building these platforms requires careful attention to reliability, scale, and real-world operational constraints.
+</p>
+<h2>The industrial environment is different</h2>
+<p>
+Consumer IoT applications and industrial IoT applications face fundamentally different challenges. Industrial environments involve:
+</p>
+<ul>
+<li><strong>Legacy equipment:</strong> Connecting to machinery built decades ago with limited modern interfaces.</li>
+<li><strong>Harsh conditions:</strong> Extreme temperatures, vibration, dust, and electromagnetic interference.</li>
+<li><strong>Safety-critical operations:</strong> Failures can endanger people and cause significant financial loss.</li>
+<li><strong>Regulatory requirements:</strong> Strict standards for data security, compliance, and audit trails.</li>
+<li><strong>Long lifecycles:</strong> Equipment may need to run for years without replacement.</li>
+</ul>
+<h2>Architecture patterns for industrial IoT</h2>
+<p>
+Successful industrial IoT platforms use tiered architectures that distribute processing across edge, fog, and cloud layers:
+</p>
+<h3>Edge computing</h3>
+<p>
+Process data locally on gateways or directly on sensors. This reduces bandwidth requirements, provides real-time response for critical operations, and continues working during network outages. Edge processing is essential for safety-critical systems that can't afford latency or connectivity loss.
+</p>
+<h3>Fog/regional processing</h3>
+<p>
+Aggregate and process data from multiple edge devices at regional facilities or data centres. This layer handles correlation across equipment, provides local analytics dashboards, and performs initial anomaly detection before sending data to cloud.
+</p>
+<h3>Cloud analytics</h3>
+<p>
+Perform deep analytics, machine learning, and long-term data storage in the cloud. This layer supports sophisticated analysis, cross-facility insights, and historical trend analysis. Cloud resources scale economically for storage-intensive workloads.
+</p>
+<h2>Data quality and calibration</h2>
+<p>
+Sensors drift. Calibration degrades. Environmental conditions affect readings. Data quality management is critical for reliable industrial IoT systems. This includes:
+</p>
+<ul>
+<li><strong>Automated calibration:</strong> Regular self-calibration routines and calibration management systems.</li>
+<li><strong>Data validation:</strong> Sanity checks that identify readings outside expected ranges.</li>
+<li><strong>Redundancy and cross-validation:</strong> Multiple sensors providing overlapping measurements for validation.</li>
+<li><strong>Alert thresholds:</strong> Clear criteria for when data quality degrades enough to trigger human review.</li>
+</ul>
+<h2>Security in industrial IoT</h2>
+<p>
+Industrial systems have long been air-gapped, but connectivity brings new security challenges. Security must be designed in from the start:
+</p>
+<ul>
+<li><strong>Device identity and authentication:</strong> Every device must have strong identity and authentication mechanisms.</li>
+<li><strong>Network segmentation:</strong> Isolate IoT devices from critical control networks where possible.</li>
+<li><strong>Firmware updates:</strong> Secure, automated processes for deploying security patches to edge devices.</li>
+<li><strong>Secure protocols:</strong> Use encrypted communication protocols with certificate-based authentication.</li>
+</ul>
+<div class="takeaways">
+<h2>Key takeaways</h2>
+<ul>
+<li>Industrial environments face unique challenges: legacy equipment, harsh conditions, safety requirements</li>
+<li>Use tiered architecture: edge, fog, and cloud layers for optimal performance</li>
+<li>Implement comprehensive data quality management with calibration and validation</li>
+<li>Design security from the start with device identity and network segmentation</li>
+</ul>
+</div>

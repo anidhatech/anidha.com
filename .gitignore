@@ -1,0 +1,5 @@
+# Internal planning notes (repo is public; keep out of git)
+docs-internal/
+node_modules/
+.cert-*/
+public/

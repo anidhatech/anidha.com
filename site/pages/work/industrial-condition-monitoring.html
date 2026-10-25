@@ -1,0 +1,115 @@
+<!--{
+ "title": "Case study: MVS ACMEI, AWS migration and full-stack enhancement",
+ "description": "Anidha partners with MVS ACMEI on AWS migration and full-stack enhancement of its Enterprise IoT Data Sync and Analytics Platform: live shop-floor views, FFT analysis, alerting and safe fleet administration.",
+ "path": "/work/industrial-condition-monitoring.html",
+ "section": "work",
+ "og": "case-condition-monitoring",
+ "caseStudy": true,
+ "breadcrumb": [["Work", "/work/"], ["MVS ACMEI", null]],
+ "updated": "2026-10-24"
+}-->
+<header class="page-hero">
+  <div class="wrap">
+    {{{breadcrumbHtml}}}
+    <img class="client-logo" src="/assets/work/mvs-acmei-logo-navy.png" width="209" height="70" alt="MVS ACMEI">
+    <h1>AWS migration and full-stack enhancement for MVS ACMEI</h1>
+    <p class="lead">MVS ACMEI partners with Anidha on its Enterprise IoT Data Sync and Analytics Platform, the software behind the MVS Vibration Sensor product. The product and its brand belong to MVS ACMEI; we are the engineering partner.</p>
+    <dl class="facts" style="margin-top:var(--s4)">
+      <dt>Client</dt><dd><a href="https://mvsgroup.co.in/" rel="noopener">MVS ACMEI Technologies Pvt. Ltd.</a>, India</dd>
+      <dt>Engagement</dt><dd>AWS Migration &amp; Full-Stack Enhancement</dd>
+      <dt>Platform</dt><dd>Enterprise IoT Data Sync &amp; Analytics Platform (MVS Vibration Sensor)</dd>
+      <dt>Our role</dt><dd>Engineering partner: cloud migration, architecture, web application, data platform</dd>
+      <dt>Practices</dt><dd><a href="/services/industrial-iot.html">Industrial IoT</a>, <a href="/services/cloud-devops.html">cloud and DevOps</a>, <a href="/services/software-engineering.html">software engineering</a>, <a href="/services/product-design.html">UI/UX design</a></dd>
+      <dt>Status</dt><dd>Phases 1 and 2 delivered; phase 3 in progress</dd>
+    </dl>
+  </div>
+</header>
+
+<section class="section" aria-labelledby="context-title">
+  <div class="wrap split">
+    <h2 id="context-title">Context</h2>
+    <div class="prose">
+      <p>Machine condition monitoring is one of MVS ACMEI's businesses. Its vibration sensors attach to rotating equipment such as pumps, fans, motors and gearboxes, in plants where one unplanned stoppage can halt a production line.</p>
+      <p>Sensors alone do not prevent failures. MVS ACMEI needed a platform that syncs readings from every device reliably and turns them into a clear picture of machine health, for every customer and plant it serves, running on cloud infrastructure that can grow with the fleet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section band-white" aria-labelledby="problem-title">
+  <div class="wrap split">
+    <h2 id="problem-title">Problem</h2>
+    <div class="prose">
+      <p>Three groups needed different things from the same data:</p>
+      <ul>
+        <li><strong>Plant teams</strong> needed to see, at a glance, which machines were healthy and which needed attention.</li>
+        <li><strong>Analysts</strong> needed vibration spectra and history to diagnose faults such as bearing wear or looseness.</li>
+        <li><strong>MVS ACMEI's administrators</strong> needed to onboard customers and plants, move sensors between machines, manage users and update firmware without risk.</li>
+      </ul>
+      <p>All of it had to work across many customers, with each customer seeing only their own plants.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="solution-title">
+  <div class="wrap">
+    <div class="split">
+      <h2 id="solution-title">Solution</h2>
+      <div class="prose">
+        <p>We moved the platform onto AWS, with infrastructure defined as code, and enhanced it across the stack: device data sync, time-series storage, the web application and administration.</p>
+        <p>The application is organised the way plants are: customer, plant, area, equipment, sensor location and sensor. Every level rolls up a condition, so a problem on one sensor is visible from the top.</p>
+      </div>
+    </div>
+    <figure style="margin:var(--s6) 0">
+      <div class="mock-frame light"><img src="/assets/work/condition-monitoring-mock.svg" width="640" height="440" alt="Illustration of the shop-floor view: six machine tiles showing horizontal, vertical and axial velocity coloured by vibration zone, and an FFT spectrum with labelled peaks." loading="lazy"></div>
+      <figcaption class="mock-caption light-caption">Redrawn illustration with sample machines and synthetic data. It is not a screenshot of the MVS ACMEI platform.</figcaption>
+    </figure>
+    <div class="grid-2">
+      <div><h3>Shop-floor views</h3><p>Every machine in a plant on one board, with horizontal, vertical and axial velocity, temperature and signal strength per sensor location, coloured by ISO 10816 vibration limits.</p></div>
+      <div><h3>FFT spectral analysis</h3><p>On-demand and scheduled captures with waveform, spectrum, peak table and waterfall history, so developing faults are visible long before they are audible.</p></div>
+      <div><h3>Live trends and alerts</h3><p>Telemetry every ten seconds, trend bands, and zone-breach alerts with hysteresis so that brief spikes do not flood teams with notifications. A per-device signal log shows exactly what each sensor did and when.</p></div>
+      <div><h3>Roles that fit the plant</h3><p>Administrators manage customers, plants, sensors and people; analysts tune limits and machine configuration; plant users see only the plants assigned to them.</p></div>
+      <div><h3>Safe fleet administration</h3><p>Sensor assignment and moves, firmware version tracking, and over-the-air firmware updates behind an explicit unlock step.</p></div>
+      <div><h3>Accountability</h3><p>An activity log records who changed what, the result, and any refused or failed attempts, alongside alert-rule templates for consistent configuration.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-navy on-navy" aria-labelledby="status-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="status-title">Delivery status</h2>
+      <p>We deliver in phases so the platform is useful early. This is where it stands today.</p>
+    </div>
+    {{{block:phases}}}
+    <div class="grid-2">
+      <div><h3>Delivered</h3><p class="muted">Phase 1 (MVP): the hierarchy, sensor and user administration, and the core dashboards. Phase 2 (real-time): live telemetry, FFT capture and analysis, and alerting.</p></div>
+      <div><h3>Next</h3><p class="muted">Phase 3 (auto-scaling) is in progress, so the platform grows with sensor count. Phase 4 (security hardening) is planned to follow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="outcomes-title">
+  <div class="wrap split">
+    <h2 id="outcomes-title">Outcomes</h2>
+    <div class="prose">
+      <ul class="check-list">
+        <li>MVS ACMEI has a working platform on AWS that can onboard its customers and plants and manage sensors, users and firmware from one console.</li>
+        <li>Plant teams and analysts get live machine condition, spectra and alerts in the same application.</li>
+        <li>Each customer's data is separated by design, and every administrative change is recorded.</li>
+      </ul>
+      <p class="muted">We will add measured results, such as alert accuracy or downtime avoided, once they have been measured in service and approved by MVS ACMEI.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section band-white" aria-labelledby="tech-title">
+  <div class="wrap split">
+    <h2 id="tech-title">Tech notes</h2>
+    <div>
+      <ul class="tech-list">
+        <li>React and TypeScript</li><li>Python and FastAPI</li><li>PostgreSQL</li><li>TimescaleDB</li><li>Redis</li><li>WebSockets</li><li>Containerised services</li><li>Infrastructure as code on AWS</li>
+      </ul>
+      <p class="muted" style="margin-top:var(--s2)">Time-series data uses hypertables and continuous aggregates, so long histories stay quick to query.</p>
+    </div>
+  </div>
+</section>
