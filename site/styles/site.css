@@ -277,11 +277,11 @@ p { text-wrap: pretty; }
 .sysmap .bus { fill: none; stroke: var(--blue); stroke-width: 2.5; }
 .sysmap .hub rect { fill: var(--navy); }
 .sysmap .hub text { fill: #fff; font-weight: 600; font-size: 15px; font-stretch: 85%; }
-.sysmap .node circle { fill: var(--surface); stroke: var(--blue); stroke-width: 2.5; transition: fill var(--fast) var(--ease); }
+.sysmap .node circle { fill: var(--surface); stroke: var(--hue, var(--blue)); stroke-width: 3; transition: fill var(--fast) var(--ease); }
 .sysmap .node text { fill: var(--navy); font-size: 15px; font-weight: 600; }
 .sysmap .node .sub { fill: var(--muted); font-size: 12.5px; font-weight: 400; }
 .sysmap a { cursor: pointer; text-decoration: none; }
-.sysmap a:hover circle, .sysmap a:focus-visible circle { fill: var(--blue); }
+.sysmap a:hover circle, .sysmap a:focus-visible circle { fill: var(--hue, var(--blue)); }
 .sysmap a:hover text:not(.sub), .sysmap a:focus-visible text:not(.sub) { fill: var(--blue); text-decoration: underline; }
 .sysmap a:focus-visible { outline: none; }
 .sysmap a:focus-visible .focus-ring { stroke: var(--blue); }
@@ -300,7 +300,8 @@ p { text-wrap: pretty; }
 .recognition-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2) var(--s4); }
 @media (min-width: 48rem) { .recognition-list { grid-template-columns: repeat(3, 1fr); } }
 .recognition-list li { margin: 0; display: flex; gap: 0.75rem; align-items: flex-start; }
-.recognition-list svg { flex: none; width: 2rem; height: 2rem; color: var(--navy); }
+.recognition-list svg { flex: none; width: 2.75rem; height: 2.75rem; }
+.recognition-list .rec-logo { flex: none; width: auto; height: 1.75rem; margin-top: 0.5rem; }
 .recognition-list b { display: block; color: var(--navy); font-weight: 600; line-height: 1.3; }
 .recognition-list span { display: block; font-size: var(--t-xs); color: var(--muted); }
 .link-button {
@@ -314,9 +315,9 @@ p { text-wrap: pretty; }
 .practice-list { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); }
 @media (min-width: 48rem) { .practice-list { grid-template-columns: 1fr 1fr; column-gap: var(--s6); } }
 .practice-list li { margin: 0; border-bottom: 1px solid var(--line); }
-.practice-list a { display: grid; grid-template-columns: 2.25rem 1fr; gap: var(--s2); padding: var(--s3) 0; text-decoration: none; color: inherit; }
+.practice-list a { display: grid; grid-template-columns: 2.75rem 1fr; gap: var(--s2); padding: var(--s3) 0; text-decoration: none; color: inherit; }
 .practice-list a:hover h3 { color: var(--blue); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
-.practice-list svg { width: 2.25rem; height: 2.25rem; color: var(--blue); }
+.practice-list svg { width: 2.75rem; height: 2.75rem; }
 .practice-list h3 { margin: 0 0 0.35rem; font-size: var(--t-l); }
 .practice-list p { margin: 0 0 0.35rem; color: var(--ink); }
 .practice-list .stack { font-size: var(--t-xs); color: var(--muted); margin: 0; }
@@ -526,3 +527,7 @@ dialog.cert-dialog::backdrop { background: rgba(15, 23, 42, 0.7); }
 /* Client logo on case-study bands and hero */
 .client-logo { width: auto; height: 2.75rem; margin-bottom: var(--s3); }
 .page-hero .client-logo { margin-top: var(--s3); margin-bottom: 0; }
+
+/* Product logo beside its heading */
+.with-logo { display: flex; align-items: center; gap: 0.75rem; }
+.with-logo img { width: 3rem; height: 3rem; flex: none; }

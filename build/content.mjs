@@ -25,6 +25,20 @@ export const PHASE_DOT = {
   planned: `<svg class="phase-dot" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3"/></svg>`,
 };
 
+// Colour icons: a tinted tile with a two-tone drawing, one hue per practice.
+const T = (bg, d) => `<svg class="cicon" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="${bg}"/><g fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</g></svg>`;
+export const COLOR_ICONS = {
+  code: T('#e0efff', '<rect x="6" y="8" width="20" height="16" rx="2.5" fill="#9fd3fb" stroke="#0f6cbd"/><path d="M6 12h20" stroke="#0f6cbd"/><path d="m13 15.5-2.5 2.5 2.5 2.5M19 15.5l2.5 2.5-2.5 2.5" stroke="#0b3f78"/><circle cx="9" cy="10" r=".6" fill="#0f6cbd" stroke="none"/><circle cx="11" cy="10" r=".6" fill="#0f6cbd" stroke="none"/>'),
+  platform: T('#e8e8ff', '<rect x="7" y="7" width="18" height="7" rx="2" fill="#a5b4fc" stroke="#4338ca"/><rect x="7" y="18" width="18" height="7" rx="2" fill="#c7d2fe" stroke="#4338ca"/><path d="M16 14v4" stroke="#4338ca"/><circle cx="10.5" cy="10.5" r="1" fill="#f59e0b" stroke="none"/><circle cx="10.5" cy="21.5" r="1" fill="#22c55e" stroke="none"/><path d="M14 10.5h7M14 21.5h7" stroke="#4338ca"/>'),
+  design: T('#ffe4f1', '<path d="M8 24v-4L19.5 8.5a2.8 2.8 0 0 1 4 4L12 24H8z" fill="#f9a8d4" stroke="#be185d"/><path d="m17.5 10.5 4 4" stroke="#be185d"/><path d="M8 20l4 4" stroke="#be185d"/><circle cx="23" cy="23" r="2.2" fill="#f59e0b" stroke="none"/>'),
+  cloud: T('#dff3ff', '<path d="M11 23a5 5 0 0 1-.7-9.95A6.5 6.5 0 0 1 22.6 12a5 5 0 0 1 .4 10H11z" fill="#9edcfb" stroke="#0369a1"/><path d="M16 15v5M13.5 17.5h5" stroke="#f59e0b" stroke-width="2.2"/>'),
+  data: T('#efe7ff', '<ellipse cx="16" cy="9.5" rx="8" ry="3" fill="#ddd0fe" stroke="#6d28d9"/><path d="M8 9.5v6.5c0 1.66 3.58 3 8 3s8-1.34 8-3V9.5" fill="#c4b5fd" stroke="#6d28d9"/><path d="M8 16v6.5c0 1.66 3.58 3 8 3s8-1.34 8-3V16" fill="#a78bfa" stroke="#6d28d9"/><circle cx="21" cy="21" r="1.2" fill="#f0abfc" stroke="none"/>'),
+  iot: T('#ddf7f2', '<circle cx="16" cy="16" r="10" fill="#99f6e4" stroke="#0f766e" stroke-opacity=".5"/><path d="M6 16h4l2.5-5.5 3.5 11 3.5-9 2 3.5H26" stroke="#0f766e" stroke-width="2"/><circle cx="21.5" cy="16" r="1.5" fill="#f43f5e" stroke="none"/>'),
+  quality: T('#dcfce7', '<path d="M16 6 9 9v5.5c0 4.8 3 8.9 7 10.5 4-1.6 7-5.7 7-10.5V9l-7-3z" fill="#86efac" stroke="#15803d"/><path d="m12.5 15.5 2.5 2.5 4.5-4.5" stroke="#14532d" stroke-width="2.2"/>'),
+  msme: T('#fff1e6', '<path d="M7 24V13l9-6 9 6v11" fill="#fdba74" stroke="#c2410c"/><path d="M13 24v-6h6v6" fill="#fff7ed" stroke="#c2410c"/><path d="M5 24h22" stroke="#c2410c"/><circle cx="16" cy="13" r="1.6" fill="#16a34a" stroke="none"/>'),
+  partner: T('#fff7db', '<path d="M11 21a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 21.8 11a4.5 4.5 0 0 1 .4 9H11z" fill="#fcd34d" stroke="#b45309"/><path d="m13 16.2 2.3 2.3 4.2-4.2" stroke="#7c2d12" stroke-width="2.2"/>'),
+};
+
 export const SERVICES = [
   { slug: 'software-engineering', icon: 'code', name: 'Software engineering',
     menu: 'Web, mobile, APIs and microservices',
@@ -63,7 +77,7 @@ export const servicesFooter = () => SERVICES.map(s =>
   `          <li><a href="/services/${s.slug}.html">${s.name}</a></li>`).join('\n');
 
 export const practiceList = (headingLevel = 3) => `<ul class="practice-list">
-${SERVICES.map(s => `  <li><a href="/services/${s.slug}.html">${ICONS[s.icon]}<div><h${headingLevel}>${s.name}${s.capability ? '<span class="tag">Capability</span>' : ''}</h${headingLevel}><p>${s.line}</p><p class="stack">${s.stack}</p></div></a></li>`).join('\n')}
+${SERVICES.map(s => `  <li><a href="/services/${s.slug}.html">${COLOR_ICONS[s.icon]}<div><h${headingLevel}>${s.name}${s.capability ? '<span class="tag">Capability</span>' : ''}</h${headingLevel}><p>${s.line}</p><p class="stack">${s.stack}</p></div></a></li>`).join('\n')}
 </ul>`;
 
 // Hero systems map. Labels are links to the practice pages.
@@ -78,6 +92,7 @@ export const sysmap = () => {
     { s: 'cloud-devops', y: 282, l: ['Cloud and', 'DevOps'] },
     { s: 'industrial-iot', y: 382, l: ['Industrial', 'IoT'] },
   ];
+  const HUE = { 'software-engineering': '#0f6cbd', 'enterprise-platforms': '#4338ca', 'product-design': '#be185d', 'cloud-devops': '#0369a1', 'data-ai': '#6d28d9', 'industrial-iot': '#0f766e', 'quality-managed-services': '#15803d' };
   let i = 0;
   const node = (n, side) => {
     const nx = side === 'l' ? 162 : 258;
@@ -85,7 +100,7 @@ export const sysmap = () => {
     const anchor = side === 'l' ? 'end' : 'start';
     const idx = i++;
     return `<path class="trace" pathLength="1" style="--i:${idx}" d="M210 ${n.y}H${nx}"/>
-  <a href="/services/${n.s}.html" class="node" style="--i:${idx}" aria-label="${n.l.join(' ')}">
+  <a href="/services/${n.s}.html" class="node" style="--i:${idx};--hue:${HUE[n.s]}" aria-label="${n.l.join(' ')}">
     <rect class="focus-ring" x="${side === 'l' ? 2 : 248}" y="${n.y - 26}" width="170" height="58" rx="6"/>
     <circle cx="${nx}" cy="${n.y}" r="7"/>
     <text x="${tx}" y="${n.y - 3}" text-anchor="${anchor}">${n.l[0]}</text>
@@ -102,7 +117,7 @@ export const sysmap = () => {
   </g>
   ${left.map(n => node(n, 'l')).join('\n  ')}
   ${right.map(n => node(n, 'r')).join('\n  ')}
-  <a href="/services/quality-managed-services.html" class="node" style="--i:${bottomIdx}" aria-label="Quality engineering and managed services">
+  <a href="/services/quality-managed-services.html" class="node" style="--i:${bottomIdx};--hue:#15803d" aria-label="Quality engineering and managed services">
     <rect class="focus-ring" x="95" y="408" width="230" height="58" rx="6"/>
     <circle cx="210" cy="418" r="7"/>
     <text x="210" y="443" text-anchor="middle">Quality and managed services</text>
@@ -122,9 +137,9 @@ export const recognition = () => `<section class="recognition" aria-labelledby="
   <div class="wrap">
     <h2 id="recognition-title" class="visually-hidden">Recognition and registrations</h2>
     <ul class="recognition-list">
-      <li>${ICONS.seal}<div><b>DPIIT-recognised startup</b><span>Startup India, Government of India. <a class="link-button" href="/assets/recognition/dpiit-certificate-masked.pdf" data-dialog="cert-dialog">View certificate (masked)</a></span></div></li>
-      <li>${ICONS.building}<div><b>MSME registered</b><span>Udyam registration, Ministry of MSME</span></div></li>
-      <li>${ICONS.cloudnet}<div><b>AWS Partner Network member</b><span>Registered partner and AWS Marketplace seller</span></div></li>
+      <li><img class="rec-logo" src="/assets/recognition/startup-india.png" width="292" height="64" alt="Startup India"><div><b>DPIIT-recognised startup</b><span>Startup India, Government of India. <a class="link-button" href="/assets/recognition/dpiit-certificate-masked.pdf" data-dialog="cert-dialog">View certificate (masked)</a></span></div></li>
+      <li>${COLOR_ICONS.msme}<div><b>MSME registered</b><span>Udyam registration, Ministry of MSME</span></div></li>
+      <li>${COLOR_ICONS.partner}<div><b>AWS Partner Network member</b><span>Registered partner and AWS Marketplace seller</span></div></li>
     </ul>
   </div>
 </section>`;
