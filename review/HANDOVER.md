@@ -32,7 +32,7 @@
 | `public/`, `scripts/`, committed `node_modules/`, `.DS_Store` | Stale copies and tooling not used by Pages. |
 
 ## Approvals and assets still needed
-- [ ] **Case-study client:** written approval to name them and show their logo. The case study is anonymised until then.
+- [x] **Case-study client:** MVS ACMEI approved for naming and logo (owner confirmation, 25 Oct 2026). Engagement title: AWS Migration & Full-Stack Enhancement, Enterprise IoT Data Sync & Analytics Platform.
 - [ ] **Outcome figures** for the case study, once measured in service.
 - [ ] **Git history:** the old certificate PDF (with the extractable number) remains in history. Purging needs a force-push to `main` by an owner.
 - [ ] **Masked Udyam certificate**, if you want a "view certificate" link like DPIIT. The current site shows text only.

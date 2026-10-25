@@ -58,8 +58,7 @@ npm run preview        # or: python3 -m http.server 4321 --directory docs
 ## Content rules
 
 - Publish only claims we can substantiate. No unsourced metrics, logos, testimonials or client counts.
-- Client names, logos and outcome figures need the client's written approval. The case study is
-  anonymised until then. `npm run check` also fails if any term listed in `docs-internal/banned-terms.txt` (git-ignored, kept locally because this repo is public) appears on the site.
+- Client names, logos and outcome figures need the client's approval (MVS ACMEI is approved). `npm run check` also fails if any term listed in `docs-internal/banned-terms.txt` (git-ignored, kept locally because this repo is public) appears on the site.
 - Practices we have not yet delivered as Anidha are labelled "Capability".
 - Contact details: contact@anidha.com, +91 77998 32255 (`tel:+917799832255`), Hyderabad. Email
   links are wrapped in `<!--email_off-->` so Cloudflare does not rewrite them.

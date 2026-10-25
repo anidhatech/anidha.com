@@ -253,7 +253,7 @@ p { text-wrap: pretty; }
 
 /* ---------- Page hero (inner pages) ---------- */
 .page-hero { padding: var(--s4) 0 var(--s8); background: var(--surface); border-bottom: 1px solid var(--line); }
-.page-hero h1 { max-width: 20ch; margin-top: var(--s3); }
+.page-hero h1 { max-width: 24ch; margin-top: var(--s3); }
 .page-hero .lead { max-width: 40rem; margin-bottom: 0; }
 .page-hero .btn-row { margin-top: var(--s4); }
 .status-note {
@@ -522,3 +522,7 @@ dialog.cert-dialog::backdrop { background: rgba(15, 23, 42, 0.7); }
 .site-footer li:not(:has(a)) { min-height: 2.5rem; display: flex; align-items: center; }
 .footer-base a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .breadcrumb a { display: inline-flex; align-items: center; min-height: 2rem; }
+
+/* Client logo on case-study bands and hero */
+.client-logo { width: auto; height: 2.75rem; margin-bottom: var(--s3); }
+.page-hero .client-logo { margin-top: var(--s3); margin-bottom: 0; }
