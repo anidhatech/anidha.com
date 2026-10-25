@@ -1,12 +1,8 @@
 name: Build and Deploy Website
 
+# Disabled: the site is served by GitHub Pages from docs/ on main. This legacy S3/CloudFront
+# deploy never had a real distribution configured, so it only runs if started by hand.
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 env:
