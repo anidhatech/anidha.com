@@ -64,5 +64,5 @@ npm run preview        # or: python3 -m http.server 4321 --directory docs
   links are wrapped in `<!--email_off-->` so Cloudflare does not rewrite them.
 - British/Indian-English spelling; sentence-case headings; every button is a verb phrase.
 
-The `.github/workflows/ci-cd.yml` workflow predates this site and deploys to S3. It is not used by
-GitHub Pages.
+The legacy `.github/workflows/ci-cd.yml` (S3/CloudFront deploy) is disabled: it runs only when started by hand.
+GitHub Pages publishes `docs/` from `main` on its own.
