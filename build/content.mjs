@@ -35,6 +35,7 @@ export const COLOR_ICONS = {
   data: T('#efe7ff', '<ellipse cx="16" cy="9.5" rx="8" ry="3" fill="#ddd0fe" stroke="#6d28d9"/><path d="M8 9.5v6.5c0 1.66 3.58 3 8 3s8-1.34 8-3V9.5" fill="#c4b5fd" stroke="#6d28d9"/><path d="M8 16v6.5c0 1.66 3.58 3 8 3s8-1.34 8-3V16" fill="#a78bfa" stroke="#6d28d9"/><circle cx="21" cy="21" r="1.2" fill="#f0abfc" stroke="none"/>'),
   iot: T('#ddf7f2', '<circle cx="16" cy="16" r="10" fill="#99f6e4" stroke="#0f766e" stroke-opacity=".5"/><path d="M6 16h4l2.5-5.5 3.5 11 3.5-9 2 3.5H26" stroke="#0f766e" stroke-width="2"/><circle cx="21.5" cy="16" r="1.5" fill="#f43f5e" stroke="none"/>'),
   quality: T('#dcfce7', '<path d="M16 6 9 9v5.5c0 4.8 3 8.9 7 10.5 4-1.6 7-5.7 7-10.5V9l-7-3z" fill="#86efac" stroke="#15803d"/><path d="m12.5 15.5 2.5 2.5 4.5-4.5" stroke="#14532d" stroke-width="2.2"/>'),
+  trade: T('#e6f6ff', '<circle cx="14" cy="15" r="8.5" fill="#bae6fd" stroke="#0369a1"/><path d="M5.5 15h17M14 6.5c-2.6 2.4-3.6 5.4-3.6 8.5s1 6.1 3.6 8.5M14 6.5c2.6 2.4 3.6 5.4 3.6 8.5s-1 6.1-3.6 8.5" stroke="#0369a1" stroke-width="1.3"/><path d="M6 25.5c4-6 11-9.5 19-9" stroke="#f97316" stroke-width="2" stroke-dasharray="2.5 2.2"/><rect x="19.5" y="19.5" width="8" height="6" rx="1" fill="#f97316" stroke="#c2410c"/><path d="M22.2 19.5v6M24.8 19.5v6" stroke="#c2410c" stroke-width="1"/><circle cx="25" cy="8" r="3.2" fill="#22c55e" stroke="none"/><path d="m23.6 8 1 1 1.8-1.9" stroke="#fff" stroke-width="1.3"/>'),
   msme: T('#fff1e6', '<path d="M7 24V13l9-6 9 6v11" fill="#fdba74" stroke="#c2410c"/><path d="M13 24v-6h6v6" fill="#fff7ed" stroke="#c2410c"/><path d="M5 24h22" stroke="#c2410c"/><circle cx="16" cy="13" r="1.6" fill="#16a34a" stroke="none"/>'),
   partner: T('#fff7db', '<path d="M11 21a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 21.8 11a4.5 4.5 0 0 1 .4 9H11z" fill="#fcd34d" stroke="#b45309"/><path d="m13 16.2 2.3 2.3 4.2-4.2" stroke="#7c2d12" stroke-width="2.2"/>'),
 };
@@ -45,8 +46,8 @@ export const SERVICES = [
     line: 'Web and mobile applications, APIs and services built to be maintained, not just shipped.',
     stack: 'Java, .NET, Python, Go, Node.js, React, Next.js, Flutter' },
   { slug: 'enterprise-platforms', icon: 'platform', name: 'Enterprise platforms', capability: true,
-    menu: 'SAP, Salesforce and Oracle GTM implementation',
-    line: 'SAP, Salesforce and Oracle Global Trade Management implementation, integration, customisation and support.',
+    menu: 'SAP, Salesforce, Oracle GTM and OTM',
+    line: 'SAP, Salesforce, Oracle Global Trade Management and Oracle Transportation Management implementation, integration, customisation and support.',
     stack: 'SAP, Salesforce, Oracle GTM and OTM, integration middleware, REST and event-driven APIs' },
   { slug: 'product-design', icon: 'design', name: 'UI/UX and product design',
     menu: 'Research, design systems and prototypes',
@@ -70,11 +71,12 @@ export const SERVICES = [
     stack: 'Test automation, performance testing, SRE, observability, incident response' },
 ];
 
+const ORACLE_MENU = `              <li class="mega-oracle"><a href="/services/oracle-gtm-otm.html"><b>Oracle GTM and OTM</b><span>Global trade and transportation management</span></a></li>`;
 export const servicesMenu = () => SERVICES.map(s =>
-  `              <li><a href="/services/${s.slug}.html"><b>${s.name}</b><span>${s.menu}</span></a></li>`).join('\n');
+  `              <li><a href="/services/${s.slug}.html"><b>${s.name}</b><span>${s.menu}</span></a></li>`).join('\n') + '\n' + ORACLE_MENU;
 
 export const servicesFooter = () => SERVICES.map(s =>
-  `          <li><a href="/services/${s.slug}.html">${s.name}</a></li>`).join('\n');
+  `          <li><a href="/services/${s.slug}.html">${s.name}</a></li>`).join('\n') + '\n          <li><a href="/services/oracle-gtm-otm.html">Oracle GTM and OTM</a></li>';
 
 export const practiceList = (headingLevel = 3) => `<ul class="practice-list">
 ${SERVICES.map(s => `  <li><a href="/services/${s.slug}.html">${COLOR_ICONS[s.icon]}<div><h${headingLevel}>${s.name}${s.capability ? '<span class="tag">Capability</span>' : ''}</h${headingLevel}><p>${s.line}</p><p class="stack">${s.stack}</p></div></a></li>`).join('\n')}
@@ -154,3 +156,27 @@ export const certDialog = () => `<dialog class="cert-dialog" id="cert-dialog" ar
     <p>The certificate number and QR code are masked. <a href="/assets/recognition/dpiit-certificate-masked.pdf">Download the masked PDF</a>.</p>
   </div>
 </dialog>`;
+
+// Specialist-service spotlight (home page and services hub)
+export const oracleSpotlight = () => `<section class="section spotlight-band" aria-labelledby="oracle-title">
+  <div class="wrap">
+    <div class="spotlight">
+      <div class="spotlight-icon">${COLOR_ICONS.trade}</div>
+      <div>
+        <p class="spot-kicker">Specialist service <span class="tag">Capability</span></p>
+        <h2 id="oracle-title">Oracle Global Trade Management and Transportation Management</h2>
+        <p class="spot-lead">Implementation, integration and support for Oracle GTM and Oracle OTM, delivered by experienced Oracle consultants working with Anidha. We cover the full journey: new implementations, rollouts to new countries, quarterly-update testing and ongoing support.</p>
+        <ul class="spot-points">
+          <li><b>Trade compliance</b><span>Restricted-party screening, sanctions and embargo checks, licences</span></li>
+          <li><b>Classification and customs</b><span>HS, ECCN and Schedule B classification, customs filings, trade documents</span></li>
+          <li><b>Transportation</b><span>Shipment planning, rating, tendering, freight audit and visibility in OTM</span></li>
+          <li><b>Integration</b><span>Oracle Fusion, EBS, SAP and carrier systems through APIs and Oracle Integration Cloud</span></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/services/oracle-gtm-otm.html">Explore Oracle GTM and OTM</a>
+          <a class="btn btn-secondary" href="/contact.html">Talk to an Oracle consultant</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`;
