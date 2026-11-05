@@ -531,3 +531,28 @@ dialog.cert-dialog::backdrop { background: rgba(15, 23, 42, 0.7); }
 /* Product logo beside its heading */
 .with-logo { display: flex; align-items: center; gap: 0.75rem; }
 .with-logo img { width: 3rem; height: 3rem; flex: none; }
+
+/* Specialist-service spotlight (Oracle GTM and OTM) */
+.spotlight-band { background: linear-gradient(180deg, #eef7ff 0%, #fff7ed 100%); }
+.section.spotlight-band + .section { border-top: 0; }
+.spotlight {
+  display: grid; gap: var(--s4); align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-m);
+  padding: var(--s4); position: relative; overflow: hidden;
+}
+.spotlight::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg, #0369a1, #0f8f83, #f97316); }
+@media (min-width: 60rem) { .spotlight { grid-template-columns: 6rem 1fr; padding: var(--s6); gap: var(--s6); } }
+.spotlight-icon svg { width: 5rem; height: 5rem; }
+.spot-kicker { font-size: var(--t-s); font-weight: 600; color: #c2410c; margin-bottom: var(--s1); }
+.spotlight h2 { max-width: 30ch; }
+.spot-lead { font-size: var(--t-l); line-height: 1.5; color: #34445a; max-width: 46rem; }
+.spot-points { list-style: none; padding: 0; margin: var(--s3) 0 var(--s4); display: grid; gap: var(--s2) var(--s4); }
+@media (min-width: 48rem) { .spot-points { grid-template-columns: 1fr 1fr; } }
+.spot-points li { margin: 0; padding: var(--s2) var(--s2) var(--s2) var(--s3); border-left: 3px solid #f97316; background: var(--paper); border-radius: 0 var(--r-s) var(--r-s) 0; }
+.spot-points li:nth-child(2) { border-left-color: #0369a1; }
+.spot-points li:nth-child(3) { border-left-color: #0f8f83; }
+.spot-points li:nth-child(4) { border-left-color: #6d28d9; }
+.spot-points b { display: block; color: var(--navy); }
+.spot-points span { display: block; font-size: var(--t-xs); color: var(--muted); }
+.hero-icon svg { width: 4rem; height: 4rem; margin-top: var(--s3); }
+.mega .mega-oracle a { border-left: 3px solid #f97316; background: #fff7ed; }

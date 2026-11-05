@@ -57,9 +57,10 @@ const blocks = {
   phasesLight: () => C.phases(false),
   recognition: C.recognition,
   certDialog: C.certDialog,
+  oracleSpotlight: C.oracleSpotlight,
 };
 const render = (tpl, vars) => tpl
-  .replace(/\{\{icon:([a-z]+)\}\}/g, (_, n) => C.ICONS[n] ?? '')
+  .replace(/\{\{icon:([a-z]+)\}\}/g, (_, n) => C.ICONS[n] ?? C.COLOR_ICONS[n] ?? '')
   .replace(/\{\{\{block:([A-Za-z0-9]+)\}\}\}/g, (_, n) => (blocks[n] ? blocks[n](vars) : ''))
   .replace(/\{\{\{([A-Za-z_]+)\}\}\}/g, (_, k) => vars[k] ?? '')
   .replace(/\{\{([A-Za-z_]+)\}\}/g, (_, k) => esc(vars[k]));
