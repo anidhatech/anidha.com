@@ -37,6 +37,8 @@ const minCss = css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace
 const js = read(path.join(SRC, 'scripts/site.js'));
 write('assets/site.css', minCss);
 write('assets/site.js', js);
+const diwaliJs = read(path.join(SRC, 'scripts/diwali.js'));
+write('assets/diwali.js', diwaliJs);
 for (const f of walk(path.join(SRC, 'assets'))) {
   const rel = path.relative(path.join(SRC, 'assets'), f);
   if (rel === 'favicon.ico') { write('favicon.ico', fs.readFileSync(f)); continue; }
@@ -110,7 +112,7 @@ for (const page of pages) {
     fullTitle: page.path === '/' ? page.title : `${page.title} | Anidha Tech Solutions`,
     ogTitle: page.title, ogType: page.layout === 'article' ? 'article' : 'website',
     canonical, ogImage, year: YEAR,
-    cssHash: hash(minCss), jsHash: hash(js),
+    cssHash: hash(minCss), jsHash: hash(js), diwaliHash: hash(diwaliJs),
     robots: page.noindex ? '<meta name="robots" content="noindex, follow">' : '',
     jsonld: JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c'),
     servicesMenu: C.servicesMenu(), servicesFooter: C.servicesFooter(),
