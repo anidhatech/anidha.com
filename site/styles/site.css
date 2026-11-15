@@ -604,3 +604,17 @@ dialog.cert-dialog::backdrop { background: rgba(15, 23, 42, 0.7); }
 @keyframes flicker { 0% { transform: scale(1, 1) rotate(-2deg); } 50% { transform: scale(0.94, 1.08) rotate(2deg); } 100% { transform: scale(1.04, 0.96) rotate(-1deg); } }
 @keyframes glow { from { opacity: 0.35; } to { opacity: 0.6; } }
 @media print { .festive-strip, .diwali-wish, .fireworks { display: none !important; } }
+
+/* Tables in prose (privacy notice) */
+.table-wrap { overflow-x: auto; margin: 0 0 var(--s2); }
+.prose table { width: 100%; border-collapse: collapse; font-size: var(--t-s); }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--line); }
+.prose th { color: var(--navy); font-weight: 600; background: var(--surface); }
+.prose td:first-child { white-space: nowrap; font-weight: 500; }
+@media (max-width: 39.99rem) {
+  .prose table, .prose tbody, .prose tr, .prose td { display: block; width: 100%; }
+  .prose thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); }
+  .prose tr { border: 1px solid var(--line); border-radius: var(--r-m); background: var(--surface); margin-bottom: var(--s2); padding: var(--s1) 0; }
+  .prose td { border: 0; padding: 0.35rem var(--s2); white-space: normal; }
+  .prose td::before { content: attr(data-label); display: block; font-size: var(--t-xs); font-weight: 600; color: var(--muted); }
+}
